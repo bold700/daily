@@ -41,8 +41,11 @@
   --accent-soft:  #f3c3a6;
 
   /* fonts */
-  --font-serif:   "Archivo", "Inter", -apple-system, sans-serif;
-  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Typografie volgt het etiket: een zware brede grotesk voor de
+     wordmark, dezelfde familie lichter voor koppen en labelregels. */
+  --font-display: "Archivo Black", "Archivo", -apple-system, sans-serif;
+  --font-serif:   "Archivo", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans:    "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* motion + shell */
   --ease:  cubic-bezier(0.22, 0.61, 0.36, 1);

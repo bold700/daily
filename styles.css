@@ -1929,3 +1929,62 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
     rgba(10, 7, 3, 0.82) 100%
   );
 }
+
+/* =================================================================
+   TYPOGRAFIE — zoals op de fles
+
+   Het etiket kent twee stemmen: de zware brede wordmark, en de
+   lichte hoofdletterregels met ruime spatiëring eronder. Alles komt
+   uit één familie (Archivo), zodat de site en het product hetzelfde
+   klinken. Geen cursief, dat staat nergens op de verpakking.
+   ================================================================= */
+
+/* de wordmark zelf */
+.dock__word,
+.page-curtain__word {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* koppen: dezelfde grotesk, zwaar en strak, zoals DAILY op het etiket */
+.display,
+.cap__title,
+.about__title,
+.quotes__title,
+.closer__line {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.032em;
+}
+.display { font-weight: 700; letter-spacing: -0.038em; }
+.display em,
+.closer__line em,
+.cap__title em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* labelregels: de kleine hoofdletters van het etiket */
+.eyebrow,
+.cap__kicker {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* kaart- en FAQ-koppen blijven in dezelfde familie, iets minder zwaar */
+.faq-item__q {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.018em;
+}
+.stack-card__num {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.stack-card__title { letter-spacing: -0.01em; }
