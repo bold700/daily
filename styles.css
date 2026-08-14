@@ -2069,3 +2069,9 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
   .stage--product .cap { padding-top: 72px; }
   .stage--product .cap__title { font-size: 1.3rem; }
 }
+
+/* De productbeelden zijn de achtergrond geworden; de kleurwassen van de
+   template zijn daarmee overbodig. Ze schemerden op mobiel boven het
+   beeld door als een crème vlak, waardoor witte tekst onleesbaar werd. */
+.stage--product .stage__washes { display: none; }
+.stage--product .stage__pin { background: var(--espresso); }
