@@ -16,31 +16,32 @@
    ================================================================= */
 
 :root {
-  /* gegenereerd door apply-brand.mjs op 2026-08-14T18:35:46.717Z */
-  /* bron: daily.brand.json — bewerk brand.json, niet dit blok */
+  /* Palet afgeleid van het goedgekeurde productconcept: heldere PET,
+     zwarte dop, koel wit label, marmer. Koel en clean in plaats van
+     het warme cream/espresso van de template. */
 
   /* paper / ink */
-  --paper:        #f4efe6;
-  --paper-2:      #ece3d3;
-  --paper-3:      #e3d8c2;
-  --ink:          #1f1a14;
-  --ink-soft:     #5b5247;
-  --ink-faint:    #8c8275;
-  --line:         rgba(31, 26, 20, 0.14);
+  --paper:        #f7f6f4;
+  --paper-2:      #eeedea;
+  --paper-3:      #e2e1dd;
+  --ink:          #17181a;
+  --ink-soft:     #55575c;
+  --ink-faint:    #8a8d93;
+  --line:         rgba(23, 24, 26, 0.14);
 
-  /* espresso (donker) */
-  --espresso:     #211a12;
-  --on-dark:      #f3ece0;
-  --on-dark-soft: #e2d8c5;
-  --line-dark:    rgba(243, 236, 224, 0.16);
+  /* donker (dopzwart) */
+  --espresso:     #141517;
+  --on-dark:      #f4f4f3;
+  --on-dark-soft: #d8d9d7;
+  --line-dark:    rgba(244, 244, 243, 0.18);
 
-  /* accent */
-  --accent:       #a8453a;
-  --accent-deep:  #8a3329;
-  --accent-soft:  #ecc8bd;
+  /* accent — blood orange uit de derde fles */
+  --accent:       #d2643a;
+  --accent-deep:  #b04d28;
+  --accent-soft:  #f3c3a6;
 
   /* fonts */
-  --font-serif:   "Fraunces", Georgia, "Times New Roman", serif;
+  --font-serif:   "Archivo", "Inter", -apple-system, sans-serif;
   --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* motion + shell */
@@ -48,7 +49,7 @@
   --shell: min(1180px, 90vw);
 
   /* footer */
-  --foot-bg: #140e07;
+  --foot-bg: #0e0f10;
 }
 
 /* =================================================================
