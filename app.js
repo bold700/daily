@@ -128,7 +128,10 @@
     const progress = stage.querySelector(".stage__progress span");
     const counter = document.getElementById("capnum");
     const N = caps.length;
-    const isNarrow = window.matchMedia("(max-width: 700px)").matches;
+    /* De gepinde crossfade draait ook op mobiel: de fles blijft staan,
+       alleen de omgeving wisselt. Alleen bij reduced-motion vallen we
+       terug op de gestapelde versie. */
+    const isNarrow = false;
 
     /* De gedeelde media-laag: één beeld per hoofdstuk, allemaal op
        dezelfde plek. Alleen de opacity wisselt, zodat de fles tijdens

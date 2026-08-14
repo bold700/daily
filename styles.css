@@ -1988,3 +1988,84 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
   letter-spacing: 0.02em;
 }
 .stack-card__title { letter-spacing: -0.01em; }
+
+/* =================================================================
+   MOBIEL — dezelfde gepinde stage als op desktop
+
+   De fles blijft ook op een telefoon staan; alleen de omgeving
+   wisselt. Omdat de beelden nog liggend zijn (1920 x 1080), zakt de
+   media-laag naar de onderste helft van het scherm en staat de tekst
+   erboven. Zodra de verticale 1080 x 1920 versies er zijn, kan de
+   media-laag hier weer het volledige scherm vullen.
+   ================================================================= */
+@media (max-width: 820px) {
+  /* svh in plaats van vh: de adresbalk van mobiele browsers laat vh
+     springen tijdens het scrollen, wat de pin laat trillen */
+  .stage__track { height: calc(var(--ch-count, 6) * 100svh); }
+  .stage__pin { height: 100svh; }
+
+  /* beeld onderin, tekst erboven */
+  .stage--product .stage__media {
+    top: auto;
+    bottom: 0;
+    height: 60svh;
+  }
+  .stage--product .shot img,
+  .stage--product .shot video { object-position: 50% 58%; }
+
+  /* zachte overgang van het beeld naar de vlakke achtergrond erboven */
+  .stage--product .stage__media::after {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 7, 3, 0.96) 0%,
+      rgba(10, 7, 3, 0.55) 18%,
+      rgba(10, 7, 3, 0.28) 42%,
+      rgba(10, 7, 3, 0.48) 78%,
+      rgba(10, 7, 3, 0.8) 100%
+    );
+  }
+  .stage--product .stage__pin { background: var(--espresso); }
+
+  /* tekst bovenaan, compacter zodat een hoofdstuk binnen één scherm past */
+  .stage--product .cap {
+    align-items: flex-start;
+    padding: 78px 22px 24px;
+  }
+  .stage--product .cap--split { justify-content: flex-start; gap: 12px; }
+  .stage--product .cap__card,
+  .stage--product .cap__col { max-width: 100%; gap: 10px; }
+
+  .stage--product .display { font-size: clamp(2rem, 10vw, 2.6rem); }
+  .stage--product .hero__lede { font-size: 0.95rem; }
+  .stage--product .cap__title { font-size: clamp(1.35rem, 6.4vw, 1.8rem); }
+  .stage--product .cap__body { font-size: 0.9rem; line-height: 1.5; }
+  .stage--product .eyebrow,
+  .stage--product .cap__kicker { font-size: 0.66rem; letter-spacing: 0.16em; }
+
+  /* kaarten compact */
+  .stage--product .cap__stack { gap: 8px; margin-top: 2px; }
+  .stage--product .stack-card { padding: 10px 12px; gap: 10px; border-radius: 10px; }
+  .stage--product .stack-card__title { font-size: 0.9rem; margin-bottom: 1px; }
+  .stage--product .stack-card__body { font-size: 0.79rem; line-height: 1.4; }
+
+  /* FAQ: vier vragen onder elkaar, klein genoeg voor één scherm */
+  .stage--product .faq-item + .faq-item { margin-top: 10px; }
+  .stage--product .faq-item__q { font-size: 0.92rem; margin-bottom: 3px; }
+  .stage--product .faq-item__a { font-size: 0.78rem; line-height: 1.4; }
+  .stage--product .cap__col--split .cap__kicker { margin-bottom: 8px; }
+
+  /* slot */
+  .stage--product .closer__line { font-size: clamp(1.6rem, 8vw, 2.1rem); margin-bottom: 12px; }
+  .stage--product .closer__body { font-size: 0.88rem; margin-bottom: 18px; }
+
+  /* hoofdstukteller en voortgang laag genoeg om de tekst niet te raken */
+  .stage--product .stage__count { bottom: 16px; }
+  .stage--product .scroll-hint { display: none; }
+}
+
+/* extra krap: kleine telefoons */
+@media (max-width: 380px) {
+  .stage--product .stage__media { height: 54svh; }
+  .stage--product .cap { padding-top: 72px; }
+  .stage--product .cap__title { font-size: 1.3rem; }
+}
