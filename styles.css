@@ -2008,7 +2008,7 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
   .stage--product .stage__media {
     top: auto;
     bottom: 0;
-    height: 60svh;
+    height: 56svh;
   }
   .stage--product .shot img,
   .stage--product .shot video { object-position: 50% 58%; }
@@ -2017,9 +2017,9 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
   .stage--product .stage__media::after {
     background: linear-gradient(
       180deg,
-      rgba(10, 7, 3, 0.96) 0%,
-      rgba(10, 7, 3, 0.55) 18%,
-      rgba(10, 7, 3, 0.28) 42%,
+      rgba(10, 7, 3, 0.94) 0%,
+      rgba(10, 7, 3, 0.42) 16%,
+      rgba(10, 7, 3, 0.14) 44%,
       rgba(10, 7, 3, 0.48) 78%,
       rgba(10, 7, 3, 0.8) 100%
     );
