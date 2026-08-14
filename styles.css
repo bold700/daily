@@ -2082,3 +2082,47 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
    template gaf dat een lichte balk onderaan op mobiel. */
 html,
 body { background: var(--espresso); }
+
+/* =================================================================
+   MOBIEL MENU — mee in de donkere DAILY-styling
+
+   De template opende het menu op een crème vlak met dunne serif-
+   letters. Hier is het donker, met dezelfde zware grotesk als de
+   koppen en het mintaccent voor de actieve staat.
+   ================================================================= */
+.menu-overlay {
+  background: linear-gradient(168deg, #1b1d20 0%, #0e0f10 100%);
+  color: var(--on-dark);
+}
+.menu-overlay__close { color: var(--on-dark); }
+.menu-overlay__nav a {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--on-dark);
+}
+.menu-overlay__nav a:hover,
+.menu-overlay__nav a:focus-visible { color: var(--accent); }
+.menu-overlay__nav a[aria-current="page"] {
+  color: var(--accent);
+  font-style: normal;
+}
+.menu-overlay__foot { border-top-color: var(--line-dark); }
+.menu-overlay__cta {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--espresso);
+}
+.menu-overlay__cta:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+}
+.menu-overlay__contact { color: var(--on-dark-soft); }
+.menu-overlay__contact a {
+  color: var(--on-dark);
+  border-bottom-color: var(--line-dark);
+}
+.menu-overlay__contact a:hover { color: var(--accent); }
+
+/* de menuknop zelf */
+.dock__menu-btn { color: var(--on-dark); }
