@@ -203,7 +203,7 @@
      horizontal-scroll affordance, dus we voegen click-and-drag toe en
      tonen een dunne scrollbar via CSS. */
   document
-    .querySelectorAll('.cap[data-ch="4"] .cap__steps-grid, .cap[data-ch="3"] .cap__services-grid')
+    .querySelectorAll(".cap__steps-grid, .cap__services-grid")
     .forEach((el) => {
       let isDown = false;
       let startX = 0;

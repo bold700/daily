@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
-    <title>DAILY — [Tagline in één regel]</title>
-    <meta name="description" content="[Beschrijving voor meta-description en social cards. Twee zinnen, max 160 tekens.]" />
+    <title>DAILY — Je dagelijkse creatine. Zonder gedoe.</title>
+    <meta name="description" content="Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard in de dop. Geen pot, schep of shaker nodig." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,15 +20,15 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="nl_NL" />
     <meta property="og:site_name" content="DAILY" />
-    <meta property="og:title" content="DAILY — [Tagline in één regel]" />
-    <meta property="og:description" content="[Beschrijving voor meta-description en social cards. Twee zinnen, max 160 tekens.]" />
+    <meta property="og:title" content="DAILY — Je dagelijkse creatine. Zonder gedoe." />
+    <meta property="og:description" content="Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard in de dop. Geen pot, schep of shaker nodig." />
     <meta property="og:url" content="https://placeholder.example" />
     <meta property="og:image" content="https://placeholder.example/media/ch00-hero.jpg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DAILY — [Tagline in één regel]" />
-    <meta name="twitter:description" content="[Beschrijving voor meta-description en social cards. Twee zinnen, max 160 tekens.]" />
+    <meta name="twitter:title" content="DAILY — Je dagelijkse creatine. Zonder gedoe." />
+    <meta name="twitter:description" content="Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard in de dop. Geen pot, schep of shaker nodig." />
     <meta name="twitter:image" content="https://placeholder.example/media/ch00-hero.jpg" />
 
     <link rel="stylesheet" href="./brand.css" />
@@ -38,7 +38,7 @@
     <div class="grain" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
-    <a class="skip-link" href="#kern">Naar de inhoud</a>
+    <a class="skip-link" href="#probleem">Naar de inhoud</a>
 
     <header class="dock" role="banner">
       <a class="dock__brand" href="#top" aria-label="DAILY, naar boven">
@@ -46,13 +46,14 @@
         <span class="dock__word">DAILY</span>
       </a>
       <nav class="dock__nav" aria-label="Hoofdnavigatie">
-        <a href="./pagina-1.html">[Pagina 1]</a>
-        <a href="./pagina-2.html">[Pagina 2]</a>
-        <a href="./pagina-3.html">[Pagina 3]</a>
-        <a href="./pagina-4.html">[Pagina 4]</a>
+        <a href="#product">Product</a>
+        <a href="#zo-werkt-het">Zo werkt het</a>
+        <a href="#momenten">Momenten</a>
+        <a href="#smaken">Smaken</a>
+        <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn--ghost dock__cta" href="mailto:hallo@daily.example?subject=DAILY" data-magnetic>
-        <span>[CTA actie]</span>
+      <a class="btn btn--ghost dock__cta" href="#tester" data-magnetic>
+        <span>Proef als eerste</span>
         <svg viewBox="0 0 16 16" aria-hidden="true">
           <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
@@ -72,14 +73,15 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
       <nav class="menu-overlay__nav" aria-label="Mobiele navigatie">
-        <a href="./pagina-1.html">[Pagina 1]</a>
-        <a href="./pagina-2.html">[Pagina 2]</a>
-        <a href="./pagina-3.html">[Pagina 3]</a>
-        <a href="./pagina-4.html">[Pagina 4]</a>
+        <a href="#product">Product</a>
+        <a href="#zo-werkt-het">Zo werkt het</a>
+        <a href="#momenten">Momenten</a>
+        <a href="#smaken">Smaken</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <div class="menu-overlay__foot">
-        <a class="btn btn--ghost menu-overlay__cta" href="mailto:hallo@daily.example?subject=DAILY">
-          <span>[CTA actie]</span>
+        <a class="btn btn--ghost menu-overlay__cta" href="#tester">
+          <span>Proef als eerste</span>
           <svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14">
             <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
@@ -92,9 +94,9 @@
 
     <main>
       <!-- ============================================================
-           SCROLLYTELLING STAGE — one sticky pin, 10 crossfading chapters.
-           Pas --ch-count en het aantal .wash + .cap blokken aan als je
-           hoofdstukken toevoegt of weghaalt.
+           SCROLLYTELLING STAGE — één sticky pin, 10 crossfadende
+           hoofdstukken. Volgorde: hero, probleem, product, zo werkt
+           het, eerlijk verschil, momenten, smaken, verhaal, FAQ, slot.
            ============================================================ -->
       <section class="stage" data-stage data-dock="light" aria-label="Het verhaal van DAILY">
         <div class="stage__track" style="--ch-count: 10;" id="top">
@@ -126,295 +128,201 @@
                   </video>
                 </div>
                 <div class="cap__card hero">
-                  <p class="eyebrow">[Sector] &nbsp;·&nbsp; [Propositie]</p>
+                  <p class="eyebrow">Elektrolyten &nbsp;·&nbsp; 5 g creatine</p>
                   <h1 class="display">
-                    [Kop regel één]<br />
-                    [Kop regel twee]<br />
-                    <em>[Kop regel drie met nadruk]</em>
+                    Je dagelijkse<br />
+                    creatine.<br />
+                    <em>Zonder gedoe.</em>
                   </h1>
                   <p class="hero__lede">
-                    [Twee zinnen die de propositie pakkend samenvatten. Beschrijf wat je
-                    doet, voor wie en wat het oplevert.]
+                    Een verfrissend drankje met elektrolyten en 5 gram creatine, apart
+                    bewaard in de dop. Geen pot, schep of shaker nodig.
                   </p>
                   <div class="hero__actions">
-                    <a class="btn btn--primary" href="mailto:hallo@daily.example?subject=DAILY" data-magnetic>
-                      <span>[CTA actie]</span>
+                    <a class="btn btn--primary" href="#tester" data-magnetic>
+                      <span>Proef de eerste batch</span>
                       <svg viewBox="0 0 16 16" aria-hidden="true">
                         <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </a>
-                    <a class="btn btn--ghost" href="#werkwijze">
-                      <span>[Secundaire knop]</span>
+                    <a class="btn btn--ghost" href="#zo-werkt-het">
+                      <span>Bekijk hoe het werkt</span>
                     </a>
                   </div>
                 </div>
                 <div class="scroll-hint" aria-hidden="true">
-                  <span>[Scroll-hint]</span>
+                  <span>Scroll</span>
                   <i></i>
                 </div>
               </article>
 
-              <!-- 01 · DE KERN — wanneer/waarom bellen ze jou -->
-              <article class="cap cap--right cap--dark" data-ch="1" data-tone="dark" id="kern">
+              <!-- 01 · HET PROBLEEM -->
+              <article class="cap cap--right cap--dark" data-ch="1" data-tone="dark" id="probleem">
                 <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch01-kern.jpg')">
                   <video muted loop playsinline preload="metadata" poster="./media/ch01-kern.jpg">
                     <source src="./media/ch01-kern.mp4" type="video/mp4" />
                   </video>
                 </div>
-                <span class="cap__ghost" data-parallax data-parallax-speed="0.10">[woord]</span>
+                <span class="cap__ghost" data-parallax data-parallax-speed="0.10">routine</span>
                 <div class="cap__card">
-                  <p class="cap__kicker">[Kicker — kern]</p>
-                  <h2 class="cap__title">[Kern-titel, één regel.]</h2>
+                  <p class="cap__kicker">Waarom we dit maken</p>
+                  <h2 class="cap__title">Het probleem is niet creatine. Het is de routine.</h2>
                   <p class="cap__body">
-                    [Vier à vijf zinnen waarin je het ideale moment van aanhaken beschrijft.
-                    Wat is de situatie van je klant, welk probleem zit hen dwars, en waarom
-                    is jouw aanpak hier de juiste? Schrijf in jij-vorm.]
+                    Je koopt een pot, gebruikt hem een paar dagen en vergeet hem vervolgens
+                    weer. Onderweg heb je geen schep, shaker of zin om zelf iets te mengen.
                   </p>
-                  <a class="cap__more" href="./pagina-2.html">
-                    [Lees meer link]
-                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
+                  <p class="cap__body">
+                    Ondertussen koop je wél water, koffie, frisdrank of een sportdrank.
+                    Daarom brengen we die momenten samen in één fles.
+                  </p>
                 </div>
               </article>
 
-              <!-- 02 · HET PROBLEEM — voor wie je werkt -->
-              <article class="cap cap--left cap--dark" data-ch="2" data-tone="dark" id="voor-bedrijven">
+              <!-- 02 · HET PRODUCT — 3 cards -->
+              <article class="cap cap--panel cap--dark" data-ch="2" data-tone="dark" id="product">
                 <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch02-probleem.jpg')">
                   <video muted loop playsinline preload="metadata" poster="./media/ch02-probleem.jpg">
                     <source src="./media/ch02-probleem.mp4" type="video/mp4" />
                   </video>
                 </div>
-                <span class="cap__ghost" data-parallax data-parallax-speed="0.09">[woord]</span>
-                <div class="cap__card">
-                  <p class="cap__kicker">[Kicker — doelgroep]</p>
-                  <h2 class="cap__title">[Probleem-claim, één regel.]</h2>
-                  <p class="cap__body">
-                    [Drie zinnen die laten zien dat je het pijnpunt van je doelgroep snapt.
-                    Benoem het probleem concreet, niet abstract. Goed: "Het profiel is
-                    te algemeen, intern zoekt iedereen iets anders." Slecht: "Recruitment
-                    is moeilijk."]
-                  </p>
-                  <a class="cap__more" href="./pagina-1.html">
-                    [Lees meer link]
-                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
+                <span class="cap__ghost" data-parallax data-parallax-speed="0.09">creatine</span>
+                <div class="cap__panel cap__services-wrap">
+                  <header class="cap__services-head">
+                    <p class="cap__kicker">Één fles · één routine</p>
+                    <h2 class="cap__title">Alles wat je nodig hebt. Pas gemixt wanneer jij het drinkt.</h2>
+                  </header>
+                  <div class="cap__services-grid">
+                    <article class="service-card">
+                      <p class="service-card__num">01</p>
+                      <h3 class="service-card__title">5 gram creatine</h3>
+                      <p class="service-card__body">Eén afgemeten portie, droog bewaard in de doseerdop.</p>
+                    </article>
+                    <article class="service-card">
+                      <p class="service-card__num">02</p>
+                      <h3 class="service-card__title">Elektrolytenwater</h3>
+                      <p class="service-card__body">Een verfrissende basis die je makkelijk gedurende je dag drinkt.</p>
+                    </article>
+                    <article class="service-card">
+                      <p class="service-card__num">03</p>
+                      <h3 class="service-card__title">Ready to go</h3>
+                      <p class="service-card__body">Geen voorbereiding, losse zakjes of shaker. Pakken en meenemen.</p>
+                    </article>
+                  </div>
                 </div>
               </article>
 
-              <!-- 03 · DIENSTEN — 3 product cards -->
-              <article class="cap cap--panel cap--dark" data-ch="3" data-tone="dark">
+              <!-- 03 · ZO WERKT HET — 3 stappen -->
+              <article class="cap cap--panel cap--dark" data-ch="3" data-tone="dark" id="zo-werkt-het">
                 <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch03-diensten.jpg')">
                   <video muted loop playsinline preload="metadata" poster="./media/ch03-diensten.jpg">
                     <source src="./media/ch03-diensten.mp4" type="video/mp4" />
                   </video>
                 </div>
-                <span class="cap__ghost" data-parallax data-parallax-speed="0.08">[woord]</span>
+                <span class="cap__ghost" data-parallax data-parallax-speed="0.08">draai</span>
                 <div class="cap__panel cap__services-wrap">
                   <header class="cap__services-head">
-                    <p class="cap__kicker">[Kicker — diensten]</p>
-                    <h2 class="cap__title">[Diensten-claim, één regel.]</h2>
+                    <p class="cap__kicker">Simpel vanaf de eerste slok</p>
+                    <h2 class="cap__title">Draai. Schud. Drink.</h2>
                   </header>
-                  <div class="cap__services-grid">
-                    <a class="service-card" href="./pagina-1.html">
+                  <div class="cap__steps-grid cap__steps-grid--three">
+                    <article class="service-card service-card--step">
                       <p class="service-card__num">01</p>
-                      <h3 class="service-card__title">[Card titel 1]</h3>
-                      <p class="service-card__body">[Eén zin uitleg.]</p>
-                    </a>
-                    <a class="service-card" href="./pagina-2.html">
+                      <h3 class="service-card__title">Draai</h3>
+                      <p class="service-card__body">Activeer de dop en laat de creatine in het drankje vallen.</p>
+                    </article>
+                    <article class="service-card service-card--step">
                       <p class="service-card__num">02</p>
-                      <h3 class="service-card__title">[Card titel 2]</h3>
-                      <p class="service-card__body">[Eén zin uitleg.]</p>
-                    </a>
-                    <a class="service-card" href="./pagina-3.html">
+                      <h3 class="service-card__title">Schud</h3>
+                      <p class="service-card__body">Meng de creatine kort door het water.</p>
+                    </article>
+                    <article class="service-card service-card--step">
                       <p class="service-card__num">03</p>
-                      <h3 class="service-card__title">[Card titel 3]</h3>
-                      <p class="service-card__body">[Eén zin uitleg.]</p>
-                    </a>
+                      <h3 class="service-card__title">Drink</h3>
+                      <p class="service-card__body">Open de fles en ga verder met je dag.</p>
+                    </article>
                   </div>
                 </div>
               </article>
 
-              <!-- 04 · WERKWIJZE — 5 step-cards -->
-              <article class="cap cap--panel cap--dark" data-ch="4" data-tone="dark" id="werkwijze">
+              <!-- 04 · EERLIJK VERSCHIL -->
+              <article class="cap cap--left cap--dark" data-ch="4" data-tone="dark" id="eerlijk">
                 <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch04-werkwijze.jpg')">
                   <video muted loop playsinline preload="metadata" poster="./media/ch04-werkwijze.jpg">
                     <source src="./media/ch04-werkwijze.mp4" type="video/mp4" />
                   </video>
                 </div>
-                <span class="cap__ghost" data-parallax data-parallax-speed="0.08">[woord]</span>
-                <div class="cap__panel cap__services-wrap cap__services-wrap--wide">
-                  <header class="cap__services-head">
-                    <p class="cap__kicker">[Kicker — werkwijze]</p>
-                    <h2 class="cap__title">[Werkwijze-claim, drie woorden.]</h2>
-                  </header>
-                  <div class="cap__steps-grid">
-                    <article class="service-card service-card--step">
-                      <p class="service-card__num">01</p>
-                      <h3 class="service-card__title">[Stap 1]</h3>
-                      <p class="service-card__body">[Eén zin uitleg.]</p>
-                    </article>
-                    <article class="service-card service-card--step">
-                      <p class="service-card__num">02</p>
-                      <h3 class="service-card__title">[Stap 2]</h3>
-                      <p class="service-card__body">[Eén zin uitleg.]</p>
-                    </article>
-                    <article class="service-card service-card--step">
-                      <p class="service-card__num">03</p>
-                      <h3 class="service-card__title">[Stap 3]</h3>
-                      <p class="service-card__body">[Eén zin uitleg.]</p>
-                    </article>
-                    <article class="service-card service-card--step">
-                      <p class="service-card__num">04</p>
-                      <h3 class="service-card__title">[Stap 4]</h3>
-                      <p class="service-card__body">[Eén zin uitleg.]</p>
-                    </article>
-                    <article class="service-card service-card--step">
-                      <p class="service-card__num">05</p>
-                      <h3 class="service-card__title">[Stap 5]</h3>
-                      <p class="service-card__body">[Eén zin uitleg.]</p>
-                    </article>
-                  </div>
-                  <div class="cap__services-foot">
-                    <a class="cap__more" href="./pagina-4.html">
-                      [Lees meer link]
-                      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </a>
-                  </div>
+                <span class="cap__ghost" data-parallax data-parallax-speed="0.08">eerlijk</span>
+                <div class="cap__card">
+                  <p class="cap__kicker">Waarom niet gewoon poeder en kraanwater?</p>
+                  <h2 class="cap__title">Niet goedkoper dan kraanwater. Wel makkelijker dan je hele routine.</h2>
+                  <p class="cap__body">
+                    Een pot creatine en kraanwater blijven de goedkoopste optie. Daar
+                    proberen we niet van te winnen.
+                  </p>
+                  <p class="cap__body">
+                    Wij maken het voor de momenten waarop je gemak, smaak en functionaliteit
+                    in één product wilt. Zonder thuis iets te hoeven voorbereiden.
+                  </p>
                 </div>
               </article>
 
-              <!-- 05 · TWEEDE DOELGROEP — bv. kandidaten, klanten, partners -->
-              <article class="cap cap--right cap--dark" data-ch="5" data-tone="dark" id="voor-tweede-doelgroep">
+              <!-- 05 · DE MOMENTEN — 3 cards -->
+              <article class="cap cap--panel cap--dark" data-ch="5" data-tone="dark" id="momenten">
                 <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch05-tweede.jpg')">
                   <video muted loop playsinline preload="metadata" poster="./media/ch05-tweede.jpg">
                     <source src="./media/ch05-tweede.mp4" type="video/mp4" />
                   </video>
                 </div>
-                <span class="cap__ghost" data-parallax data-parallax-speed="0.07">[woord]</span>
-                <div class="cap__card">
-                  <p class="cap__kicker">[Kicker — tweede doelgroep]</p>
-                  <h2 class="cap__title">[Belofte aan tweede doelgroep, één regel.]</h2>
-                  <p class="cap__body">
-                    [Drie zinnen waarin je laat zien wat je voor de tweede doelgroep doet —
-                    bijvoorbeeld kandidaten, klanten, of partners. Verschuif van bedrijfs-
-                    naar persoonsperspectief.]
-                  </p>
-                  <a class="cap__more" href="./pagina-3.html">
-                    [Lees meer link]
-                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </a>
-                </div>
-              </article>
-
-              <!-- 06 · OVER — portret + intro -->
-              <article class="cap cap--panel cap--light" data-ch="6" data-tone="light" id="over">
-                <div class="cap__panel cap__about">
-                  <figure class="portrait portrait--arch">
-                    <img class="portrait__img" src="./media/portrait.jpg" alt="Portret van DAILY" />
-                  </figure>
-
-                  <div class="about__text">
-                    <p class="cap__kicker">[Kicker — over]</p>
-                    <h2 class="about__title">[Persoonlijke claim in één regel.]</h2>
-                    <div class="about__body">
-                      <p>
-                        [Vijf à zes zinnen waarin je vertelt wie je bent, vanuit welk
-                        perspectief je werkt, en wat opdrachtgevers van je mogen verwachten.
-                        Hou het op de toon van het visitekaartje, niet op een CV-toon.]
-                      </p>
-                    </div>
-                    <a class="cap__more" href="./pagina-5.html">
-                      [Lees meer link]
-                      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </a>
+                <span class="cap__ghost" data-parallax data-parallax-speed="0.07">onderweg</span>
+                <div class="cap__panel cap__services-wrap">
+                  <header class="cap__services-head">
+                    <p class="cap__kicker">Voor dagen die vol zitten</p>
+                    <h2 class="cap__title">Een dagelijkse routine die met je meegaat.</h2>
+                  </header>
+                  <div class="cap__services-grid">
+                    <article class="service-card">
+                      <p class="service-card__num">01</p>
+                      <h3 class="service-card__title">Op het werk</h3>
+                      <p class="service-card__body">Een functioneel alternatief voor het zoveelste standaard drankje.</p>
+                    </article>
+                    <article class="service-card">
+                      <p class="service-card__num">02</p>
+                      <h3 class="service-card__title">Na het sporten</h3>
+                      <p class="service-card__body">Je creatine direct bij je, zonder een shaker mee te nemen.</p>
+                    </article>
+                    <article class="service-card">
+                      <p class="service-card__num">03</p>
+                      <h3 class="service-card__title">Onderweg</h3>
+                      <p class="service-card__body">Van sportschool tot tankstation en van kantoor tot supermarkt.</p>
+                    </article>
                   </div>
                 </div>
               </article>
 
-              <!-- 07 · OVER VERVOLG — zelfde portret-layout, andere tekst (quote) -->
-              <article class="cap cap--panel cap--light" data-ch="7" data-tone="light">
-                <div class="cap__panel cap__about">
-                  <figure class="portrait portrait--arch">
-                    <img class="portrait__img" src="./media/portrait.jpg" alt="" />
-                  </figure>
-
-                  <div class="about__text">
-                    <p class="cap__kicker">[Kicker — over vervolg]</p>
-                    <blockquote class="pull-quote pull-quote--lead">
-                      [Een sterke quote of overtuiging die je werk samenvat in één zin.]
-                    </blockquote>
-                    <div class="about__body">
-                      <p>
-                        [Vier zinnen die je inzetbaarheid breder maken — denk aan interim-rollen,
-                        projectleiding, of een specifieke expertise waar je voor gevraagd wordt.]
-                      </p>
-                    </div>
-                    <a class="cap__more" href="./pagina-5.html">
-                      [Lees meer link]
-                      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </article>
-
-              <!-- 08 · REFERENTIES — 3 quote cards -->
-              <article class="cap cap--panel cap--light" data-ch="8" data-tone="light" id="referenties">
+              <!-- 06 · DE SMAKEN -->
+              <article class="cap cap--panel cap--light" data-ch="6" data-tone="light" id="smaken">
                 <div class="cap__panel cap__quotes">
                   <header class="quotes__head">
-                    <p class="cap__kicker">[Kicker — referenties]</p>
-                    <h2 class="quotes__title">[Referenties claim, één regel.]</h2>
+                    <p class="cap__kicker">De eerste batch</p>
+                    <h2 class="quotes__title">Welke zou jij kiezen?</h2>
                   </header>
                   <div class="quotes__grid">
                     <figure class="quote-card">
-                      <p class="quote-card__lead">&ldquo;[Korte krachtige samenvatting]&rdquo;</p>
-                      <blockquote>
-                        [Drie à vier zinnen quote. Liever specifiek dan algemeen — noem situaties,
-                        gedrag of resultaten in plaats van bijvoeglijke naamwoorden.]
-                      </blockquote>
-                      <figcaption>
-                        <span class="quote-card__name">[Naam]</span>
-                        <span class="quote-card__role">[Functie · Bedrijf]</span>
-                      </figcaption>
+                      <p class="quote-card__lead">Pure</p>
+                      <blockquote>Clean, fris en subtiel.</blockquote>
                     </figure>
-
                     <figure class="quote-card">
-                      <p class="quote-card__lead">&ldquo;[Korte krachtige samenvatting]&rdquo;</p>
-                      <blockquote>
-                        [Drie à vier zinnen quote.]
-                      </blockquote>
-                      <figcaption>
-                        <span class="quote-card__name">[Naam]</span>
-                        <span class="quote-card__role">[Functie · Bedrijf]</span>
-                      </figcaption>
+                      <p class="quote-card__lead">Lemon + Sea Salt</p>
+                      <blockquote>Fris, licht zout en makkelijk drinkbaar.</blockquote>
                     </figure>
-
                     <figure class="quote-card">
-                      <p class="quote-card__lead">&ldquo;[Korte krachtige samenvatting]&rdquo;</p>
-                      <blockquote>
-                        [Drie à vier zinnen quote.]
-                      </blockquote>
-                      <figcaption>
-                        <span class="quote-card__name">[Naam]</span>
-                        <span class="quote-card__role">[Functie · Bedrijf]</span>
-                      </figcaption>
+                      <p class="quote-card__lead">Blood Orange</p>
+                      <blockquote>Fruitig, volwassen en niet te zoet.</blockquote>
                     </figure>
                   </div>
-                  <div class="refs-progress" aria-hidden="true"><span></span></div>
                   <div class="cap__services-foot">
-                    <a class="cap__more" href="mailto:hallo@daily.example?subject=DAILY">
-                      [Lees meer link]
+                    <a class="cap__more" href="mailto:hallo@daily.example?subject=Mijn%20favoriete%20DAILY-smaak">
+                      Stem op jouw favoriete smaak
                       <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
                         <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
@@ -423,21 +331,89 @@
                 </div>
               </article>
 
-              <!-- 09 · SLOT — closing CTA -->
-              <article class="cap cap--closer cap--dark" data-ch="9" data-tone="dark">
+              <!-- 07 · ONS VERHAAL -->
+              <article class="cap cap--panel cap--light" data-ch="7" data-tone="light" id="verhaal">
+                <div class="cap__panel cap__about">
+                  <figure class="portrait portrait--arch">
+                    <img class="portrait__img" src="./media/portrait.jpg" alt="De makers van DAILY" />
+                  </figure>
+
+                  <div class="about__text">
+                    <p class="cap__kicker">Gemaakt vanuit ons eigen leven</p>
+                    <h2 class="about__title">Het product dat we zelf misten.</h2>
+                    <div class="about__body">
+                      <p>
+                        We sporten veel, runnen onze bedrijven en proberen goed voor onszelf
+                        te zorgen. Maar op drukke dagen winnen gemak en routine het altijd
+                        van goede intenties.
+                      </p>
+                      <p>
+                        Daarom maken we geen ingewikkeld supplement. We maken een lekker
+                        drankje dat je graag meeneemt en waarmee je jouw creatine niet meer
+                        hoeft te vergeten.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 08 · FAQ -->
+              <article class="cap cap--panel cap--light" data-ch="8" data-tone="light" id="faq">
+                <div class="cap__panel cap__quotes">
+                  <header class="quotes__head">
+                    <h2 class="quotes__title">Veelgestelde vragen</h2>
+                  </header>
+                  <div class="quotes__grid quotes__grid--faq">
+                    <figure class="quote-card">
+                      <p class="quote-card__lead">Waarom zit de creatine apart?</p>
+                      <blockquote>
+                        Creatine blijft droog in de doseerdop en wordt pas vlak voor het
+                        drinken met het water gemengd.
+                      </blockquote>
+                    </figure>
+                    <figure class="quote-card">
+                      <p class="quote-card__lead">Is dit een energiedrank?</p>
+                      <blockquote>
+                        Nee. Het uitgangspunt is geen Red Bull-vervanger, maar een dagelijks
+                        drankje met elektrolyten en creatine.
+                      </blockquote>
+                    </figure>
+                    <figure class="quote-card">
+                      <p class="quote-card__lead">Waarom geen zakje?</p>
+                      <blockquote>
+                        Zakjes zijn goedkoper, maar je hebt nog steeds water, een fles en een
+                        moment om alles te mengen nodig. Dit product draait om gemak.
+                      </blockquote>
+                    </figure>
+                    <figure class="quote-card">
+                      <p class="quote-card__lead">Wanneer is het verkrijgbaar?</p>
+                      <blockquote>
+                        We ontwikkelen momenteel de eerste smaken en zoeken mensen die willen
+                        testen en eerlijke feedback willen geven.
+                      </blockquote>
+                    </figure>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 09 · SLOT -->
+              <article class="cap cap--closer cap--dark" data-ch="9" data-tone="dark" id="tester">
                 <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch09-slot.jpg')">
                   <video muted loop playsinline preload="metadata" poster="./media/ch09-slot.jpg">
                     <source src="./media/ch09-slot.mp4" type="video/mp4" />
                   </video>
                 </div>
                 <div class="cap__card closer__inner">
-                  <p class="eyebrow eyebrow--accent">[Slot eyebrow]</p>
+                  <p class="eyebrow eyebrow--accent">Word onderdeel van de eerste batch</p>
                   <p class="closer__line">
-                    [Eén krachtige slotzin. Geef ruimte aan een <em>geaccentueerd</em> woord
-                    voor visuele rust.]
+                    Wil jij als <em>eerste</em> proeven?
                   </p>
-                  <a class="btn btn--primary btn--lg" href="mailto:hallo@daily.example?subject=DAILY" data-magnetic>
-                    <span>[CTA actie]</span>
+                  <p class="closer__body">
+                    Meld je aan als tester, kies jouw favoriete smaak en help ons bepalen
+                    welk product uiteindelijk in het schap komt.
+                  </p>
+                  <a class="btn btn--primary btn--lg" href="mailto:hallo@daily.example?subject=Ik%20wil%20DAILY-tester%20worden" data-magnetic>
+                    <span>Ik wil tester worden</span>
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                       <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
@@ -454,29 +430,30 @@
       <div class="foot__grid">
         <div class="foot__brand">
           <img class="dock__logo dock__logo--ondark" src="./media/logo.png" alt="DAILY" />
-          <p class="foot__tag">[Korte footer-beschrijving over het merk in één à twee zinnen.]</p>
+          <p class="foot__tag">
+            Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard
+            in de dop. Je dagelijkse creatine, zonder gedoe.
+          </p>
         </div>
         <div>
-          <h3>[Footer kop 1]</h3>
+          <h3>Ontdek</h3>
           <ul>
-            <li><a href="./pagina-1.html">[Pagina 1]</a></li>
-            <li><a href="./pagina-2.html">[Pagina 2]</a></li>
-            <li><a href="./pagina-3.html">[Pagina 3]</a></li>
-            <li><a href="./pagina-4.html">[Pagina 4]</a></li>
+            <li><a href="#product">Product</a></li>
+            <li><a href="#zo-werkt-het">Zo werkt het</a></li>
+            <li><a href="#momenten">Momenten</a></li>
+            <li><a href="#smaken">Smaken</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
         <div>
           <h3>Contact</h3>
           <address>
-            <a href="mailto:hallo@daily.example">hallo@daily.example</a><br />
-            <a href="tel:+31600000000">+31 6 00 00 00 00</a><br />
-            [Stad] &middot; Nederland<br />
-            <a href="https://www.linkedin.com/company/placeholder/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:hallo@daily.example">hallo@daily.example</a>
           </address>
         </div>
       </div>
       <div class="foot__bar">
-        <span>DAILY &nbsp;·&nbsp; DAILY &nbsp;·&nbsp; &copy; 2026</span>
+        <span>DAILY &nbsp;·&nbsp; &copy; 2026</span>
         <a href="https://bold700.com" target="_blank" rel="noopener" class="foot__powered">Powered by <strong>BOLD700</strong></a>
       </div>
     </footer>

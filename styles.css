@@ -688,8 +688,8 @@ a.service-card:focus-visible {
   .service-card { padding: 22px 22px; }
 }
 @media (max-width: 1100px) {
-  .cap[data-ch="4"] .cap__steps-grid,
-  .cap[data-ch="3"] .cap__services-grid {
+  .cap__steps-grid,
+  .cap__services-grid {
     display: flex;
     flex-direction: row;
     grid-template-columns: none;
@@ -705,49 +705,49 @@ a.service-card:focus-visible {
     scrollbar-width: thin;
     scrollbar-color: var(--accent) transparent;
   }
-  .cap[data-ch="4"] .cap__steps-grid.is-grabbing,
-  .cap[data-ch="3"] .cap__services-grid.is-grabbing {
+  .cap__steps-grid.is-grabbing,
+  .cap__services-grid.is-grabbing {
     cursor: grabbing;
     scroll-snap-type: none;
   }
-  .cap[data-ch="4"] .cap__steps-grid::-webkit-scrollbar,
-  .cap[data-ch="3"] .cap__services-grid::-webkit-scrollbar {
+  .cap__steps-grid::-webkit-scrollbar,
+  .cap__services-grid::-webkit-scrollbar {
     height: 4px;
   }
-  .cap[data-ch="4"] .cap__steps-grid::-webkit-scrollbar-track,
-  .cap[data-ch="3"] .cap__services-grid::-webkit-scrollbar-track {
+  .cap__steps-grid::-webkit-scrollbar-track,
+  .cap__services-grid::-webkit-scrollbar-track {
     background: rgba(243, 236, 224, 0.12);
     border-radius: 4px;
   }
-  .cap[data-ch="4"] .cap__steps-grid::-webkit-scrollbar-thumb,
-  .cap[data-ch="3"] .cap__services-grid::-webkit-scrollbar-thumb {
+  .cap__steps-grid::-webkit-scrollbar-thumb,
+  .cap__services-grid::-webkit-scrollbar-thumb {
     background: var(--accent);
     border-radius: 4px;
   }
   /* touch devices: hide bar, rely on swipe */
   @media (hover: none) {
-    .cap[data-ch="4"] .cap__steps-grid,
-    .cap[data-ch="3"] .cap__services-grid {
+    .cap__steps-grid,
+    .cap__services-grid {
       scrollbar-width: none;
     }
-    .cap[data-ch="4"] .cap__steps-grid::-webkit-scrollbar,
-    .cap[data-ch="3"] .cap__services-grid::-webkit-scrollbar {
+    .cap__steps-grid::-webkit-scrollbar,
+    .cap__services-grid::-webkit-scrollbar {
       display: none;
     }
   }
-  .cap[data-ch="4"] .cap__steps-grid > .service-card--step,
-  .cap[data-ch="3"] .cap__services-grid > .service-card {
+  .cap__steps-grid > .service-card--step,
+  .cap__services-grid > .service-card {
     flex: 0 0 min(78%, 360px);
     scroll-snap-align: start;
   }
-  .cap[data-ch="4"] .cap__steps-grid > .service-card--step:last-child,
-  .cap[data-ch="3"] .cap__services-grid > .service-card:last-child {
+  .cap__steps-grid > .service-card--step:last-child,
+  .cap__services-grid > .service-card:last-child {
     margin-right: 8px;
   }
 }
 @media (max-width: 520px) {
-  .cap[data-ch="4"] .cap__steps-grid > .service-card--step,
-  .cap[data-ch="3"] .cap__services-grid > .service-card {
+  .cap__steps-grid > .service-card--step,
+  .cap__services-grid > .service-card {
     flex: 0 0 82%;
   }
 }
@@ -1701,4 +1701,35 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
   .page-curtain { transition: none; }
   .page-curtain__mark,
   .page-curtain__word { transition: none; }
+}
+
+/* =================================================================
+   DAILY — aanpassingen op de scroll-editorial basis
+   ================================================================= */
+
+/* Zo werkt het telt drie stappen in plaats van vijf */
+.cap__steps-grid--three { grid-template-columns: repeat(3, 1fr); }
+
+/* FAQ: vier kaarten, twee kolommen. De quote-card doet dienst als
+   vraag/antwoord-kaart, de lead is de vraag. */
+.quotes__grid--faq { grid-template-columns: repeat(2, 1fr); }
+.quotes__grid--faq .quote-card__lead {
+  font-style: normal;
+  font-weight: 400;
+}
+@media (max-width: 820px) {
+  .quotes__grid--faq { grid-template-columns: 1fr; }
+}
+
+/* Smaken- en FAQ-kaarten hebben geen figcaption, dus geen extra ruimte
+   onderaan reserveren */
+.quotes__grid--faq .quote-card blockquote { flex: 0 1 auto; }
+
+/* Slot: toelichting onder de slotzin */
+.closer__body {
+  max-width: 620px;
+  margin: -18px auto 34px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--on-dark-soft);
 }

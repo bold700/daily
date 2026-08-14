@@ -1,18 +1,16 @@
 {
-  "$comment": "DAILY — testopzet voor een drankmerk op de scroll-editorial template. Kleuren en fonts staan nog op het template-default (warm cream/espresso). Zodra de merkinfo binnen is: kleuren + fonts hier aanpassen en opnieuw bakken met `node apply-brand.mjs ./examples/daily.brand.json ~/Documents/GitHub/daily`.",
-
+  "$comment": "DAILY — brandwaarden. LET OP: index.html is met de hand gevuld met de definitieve teksten. Opnieuw bakken met apply-brand.mjs overschrijft die teksten. Gebruik dit bestand als naslag voor kleuren/fonts en pas brand.css bij voorkeur direct aan.",
   "brand": {
     "name": "DAILY",
-    "tagline": "[Tagline in één regel]",
-    "description": "[Beschrijving voor meta-description en social cards. Twee zinnen, max 160 tekens.]",
+    "tagline": "Je dagelijkse creatine. Zonder gedoe.",
+    "description": "Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard in de dop. Geen pot, schep of shaker nodig.",
     "url": "https://placeholder.example",
     "lang": "nl",
     "locale": "nl_NL",
     "year": 2026,
     "legal": "DAILY",
-    "footerTag": "[Korte footer-beschrijving over het merk in één à twee zinnen.]"
+    "footerTag": "Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard in de dop. Je dagelijkse creatine, zonder gedoe."
   },
-
   "contact": {
     "email": "hallo@daily.example",
     "phone": "+31 6 00 00 00 00",
@@ -21,12 +19,10 @@
     "country": "Nederland",
     "linkedin": "https://www.linkedin.com/company/placeholder/"
   },
-
   "cta": {
-    "label": "[CTA actie]",
-    "subject": "DAILY"
+    "label": "Proef als eerste",
+    "subject": "Ik wil DAILY-tester worden"
   },
-
   "$comment_colors": "Nog template-default. Vervangen zodra het palet van DAILY bekend is. Test contrast minimaal 4.5:1 (WCAG AA) op ink/paper, onDark/espresso, accent/paper en accent/espresso.",
   "colors": {
     "paper": "#f4efe6",
@@ -36,19 +32,15 @@
     "inkSoft": "#5b5247",
     "inkFaint": "#8c8275",
     "line": "rgba(31, 26, 20, 0.14)",
-
     "espresso": "#211a12",
     "onDark": "#f3ece0",
     "onDarkSoft": "#e2d8c5",
     "lineDark": "rgba(243, 236, 224, 0.16)",
-
     "accent": "#a8453a",
     "accentDeep": "#8a3329",
     "accentSoft": "#ecc8bd",
-
     "footBg": "#140e07"
   },
-
   "$comment_fonts": "Nog template-default (Fraunces + Inter).",
   "fonts": {
     "serif": "\"Fraunces\", Georgia, \"Times New Roman\", serif",
