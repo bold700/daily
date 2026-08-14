@@ -2126,3 +2126,9 @@ body { background: var(--espresso); }
 
 /* de menuknop zelf */
 .dock__menu-btn { color: var(--on-dark); }
+
+/* Met het menu open ligt de dock boven de donkere overlay, dus de
+   merknaam moet daar altijd licht zijn ongeacht de hoofdstuk-toon. */
+body.menu-open .dock,
+body.menu-open .dock__word,
+body.menu-open .dock__menu-btn { color: var(--on-dark); }
