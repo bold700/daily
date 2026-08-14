@@ -2075,3 +2075,9 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
    beeld door als een crème vlak, waardoor witte tekst onleesbaar werd. */
 .stage--product .stage__washes { display: none; }
 .stage--product .stage__pin { background: var(--espresso); }
+
+/* Achtergrond van de pagina zelf donker. Safari toont deze kleur in de
+   overscroll en achter de onderste werkbalk; met de crèmekleur van de
+   template gaf dat een lichte balk onderaan op mobiel. */
+html,
+body { background: var(--espresso); }
