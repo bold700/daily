@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>[Paginatitel] | DAILY</title>
+    <meta name="description" content="[Korte page-beschrijving van max 160 tekens.]" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/png" href="./media/logo.png" />
+    <link rel="canonical" href="https://placeholder.example/detail.html" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:site_name" content="DAILY" />
+    <meta property="og:title" content="[Paginatitel] | DAILY" />
+    <meta property="og:description" content="[Korte page-beschrijving.]" />
+    <meta property="og:url" content="https://placeholder.example/detail.html" />
+
+    <link rel="stylesheet" href="./brand.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="page-detail">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <a class="skip-link" href="#main">Naar de inhoud</a>
+
+    <header class="dock" role="banner">
+      <a class="dock__brand" href="./" aria-label="DAILY, terug naar home">
+        <img class="dock__logo" src="./media/logo.png" alt="" />
+        <span class="dock__word">DAILY</span>
+      </a>
+      <nav class="dock__nav" aria-label="Hoofdnavigatie">
+        <a href="./pagina-1.html" aria-current="page">[Pagina 1]</a>
+        <a href="./pagina-2.html">[Pagina 2]</a>
+        <a href="./pagina-3.html">[Pagina 3]</a>
+        <a href="./pagina-4.html">[Pagina 4]</a>
+      </nav>
+      <a class="btn btn--ghost dock__cta" href="mailto:hallo@daily.example?subject=DAILY" data-magnetic>
+        <span>[CTA actie]</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+      <button class="dock__menu-btn" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="dock__menu-icon dock__menu-icon--open" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+          <path d="M2 5h14M2 9h14M2 13h14"/>
+        </svg>
+        <svg class="dock__menu-icon dock__menu-icon--close" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 4l10 10M14 4L4 14"/>
+        </svg>
+      </button>
+    </header>
+
+    <div class="menu-overlay" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Hoofdmenu">
+      <button class="menu-overlay__close" type="button" aria-label="Menu sluiten">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <nav class="menu-overlay__nav" aria-label="Mobiele navigatie">
+        <a href="./pagina-1.html" aria-current="page">[Pagina 1]</a>
+        <a href="./pagina-2.html">[Pagina 2]</a>
+        <a href="./pagina-3.html">[Pagina 3]</a>
+        <a href="./pagina-4.html">[Pagina 4]</a>
+      </nav>
+      <div class="menu-overlay__foot">
+        <a class="btn btn--ghost menu-overlay__cta" href="mailto:hallo@daily.example?subject=DAILY">
+          <span>[CTA actie]</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14">
+            <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <p class="menu-overlay__contact">
+          <a href="mailto:hallo@daily.example">hallo@daily.example</a>
+        </p>
+      </div>
+    </div>
+
+    <main id="main">
+      <!-- ============================================================
+           DETAIL STAGE — 5 hoofdstukken, cream washes (geen video op
+           interior chapters). Het slot-hoofdstuk is donker via
+           .wash--dark + .cap--dark.
+
+           Pas --ch-count aan als je hoofdstukken toevoegt/weghaalt.
+           ============================================================ -->
+      <section class="stage stage--detail" data-stage data-dock="light" aria-label="[Pagina-titel]">
+        <div class="stage__track" style="--ch-count: 5;" id="top">
+          <div class="stage__pin">
+            <div class="stage__washes" aria-hidden="true">
+              <div class="wash is-active" data-ch="0"></div>
+              <div class="wash" data-ch="1"></div>
+              <div class="wash" data-ch="2"></div>
+              <div class="wash" data-ch="3"></div>
+              <div class="wash wash--dark" data-ch="4"></div>
+            </div>
+            <div class="stage__progress" aria-hidden="true"><span></span></div>
+            <div class="stage__count" aria-hidden="true">
+              <span id="capnum">01</span><i>/ 05</i>
+            </div>
+
+            <div class="stage__captions">
+              <!-- 00 · HERO met video achtergrond -->
+              <article class="cap cap--hero cap--dark is-active" data-ch="0" data-tone="dark">
+                <div class="cap__video cap__video--hero" aria-hidden="true" style="background-image:url('./media/detail-hero.jpg')">
+                  <video autoplay muted loop playsinline preload="auto" poster="./media/detail-hero.jpg">
+                    <source src="./media/detail-hero.mp4" type="video/mp4" />
+                  </video>
+                </div>
+
+                <div class="cap__card hero">
+                  <p class="eyebrow">[Categorie] &nbsp;·&nbsp; [Nummer]</p>
+                  <h1 class="display">
+                    [Paginatitel].
+                  </h1>
+                  <p class="hero__lede">
+                    [Eén zin die de pagina kort samenvat.]
+                  </p>
+                </div>
+                <div class="scroll-hint" aria-hidden="true">
+                  <span>[Scroll-hint]</span>
+                  <i></i>
+                </div>
+              </article>
+
+              <!-- 01 · WANNEER — beeld links, tekst rechts -->
+              <article class="cap cap--panel cap--light" data-ch="1" data-tone="light">
+                <div class="cap__panel cap__about">
+                  <figure class="portrait portrait--frame">
+                    <img class="portrait__img" src="./media/detail-section-1.jpg" alt="" />
+                  </figure>
+                  <div class="about__text">
+                    <p class="cap__kicker">[Kicker 1]</p>
+                    <h2 class="about__title">[Sectie-titel 1 in één regel.]</h2>
+                    <div class="about__body">
+                      <p>
+                        [Drie à vier zinnen die het wanneer / waarom van deze dienst uitleggen.]
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 02 · WAT IK DOE — gespiegeld (cap__about--reverse) -->
+              <article class="cap cap--panel cap--light" data-ch="2" data-tone="light">
+                <div class="cap__panel cap__about cap__about--reverse">
+                  <figure class="portrait portrait--frame">
+                    <img class="portrait__img" src="./media/detail-section-2.jpg" alt="" />
+                  </figure>
+                  <div class="about__text">
+                    <p class="cap__kicker">[Kicker 2]</p>
+                    <h2 class="about__title">[Sectie-titel 2 in één regel.]</h2>
+                    <div class="about__body">
+                      <p>
+                        [Drie à vier zinnen die concreet uitleggen wat je doet binnen deze dienst.]
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 03 · WAT JE KRIJGT — beeld links, tekst rechts -->
+              <article class="cap cap--panel cap--light" data-ch="3" data-tone="light">
+                <div class="cap__panel cap__about">
+                  <figure class="portrait portrait--frame">
+                    <img class="portrait__img" src="./media/detail-section-3.jpg" alt="" />
+                  </figure>
+                  <div class="about__text">
+                    <p class="cap__kicker">[Kicker 3]</p>
+                    <h2 class="about__title">[Sectie-titel 3 in één regel.]</h2>
+                    <div class="about__body">
+                      <p>
+                        [Drie à vier zinnen die het concrete eindresultaat beschrijven.]
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 04 · SLOT CTA — terug naar espresso via .wash--dark + .cap--dark -->
+              <article class="cap cap--closer cap--dark" data-ch="4" data-tone="dark">
+                <div class="cap__card closer__inner">
+                  <p class="eyebrow eyebrow--accent">[Slot eyebrow]</p>
+                  <p class="closer__line">
+                    [Slotzin met <em>geaccentueerd</em> woord.]
+                  </p>
+                  <a class="btn btn--primary btn--lg" href="mailto:hallo@daily.example?subject=DAILY" data-magnetic>
+                    <span>[CTA actie]</span>
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot" data-dock="dark">
+      <div class="foot__grid">
+        <div class="foot__brand">
+          <img class="dock__logo dock__logo--ondark" src="./media/logo.png" alt="DAILY" />
+          <p class="foot__tag">[Korte footer-beschrijving over het merk in één à twee zinnen.]</p>
+        </div>
+        <div>
+          <h3>[Footer kop 1]</h3>
+          <ul>
+            <li><a href="./pagina-1.html">[Pagina 1]</a></li>
+            <li><a href="./pagina-2.html">[Pagina 2]</a></li>
+            <li><a href="./pagina-3.html">[Pagina 3]</a></li>
+            <li><a href="./pagina-4.html">[Pagina 4]</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <address>
+            <a href="mailto:hallo@daily.example">hallo@daily.example</a><br />
+            <a href="tel:+31600000000">+31 6 00 00 00 00</a><br />
+            [Stad] &middot; Nederland<br />
+            <a href="https://www.linkedin.com/company/placeholder/" target="_blank" rel="noopener">LinkedIn</a>
+          </address>
+        </div>
+      </div>
+      <div class="foot__bar">
+        <span>DAILY &nbsp;·&nbsp; DAILY &nbsp;·&nbsp; &copy; 2026</span>
+        <a href="https://bold700.com" target="_blank" rel="noopener" class="foot__powered">Powered by <strong>BOLD700</strong></a>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="./app.js" defer></script>
+    <div class="page-curtain" data-page-curtain aria-hidden="true">
+      <img class="page-curtain__mark" src="./media/logo.png" alt="" />
+      <span class="page-curtain__word">DAILY</span>
+    </div>
+    <noscript><style>[data-page-curtain]{display:none!important}</style></noscript>
+  </body>
+</html>

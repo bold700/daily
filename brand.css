@@ -1,0 +1,195 @@
+/* =================================================================
+   BRAND.CSS — single source of truth for the brand layer.
+   Edit this file (of laat apply-brand.mjs het regeneren vanuit
+   brand.json) om de hele site in één klap te rebranden.
+
+   Bevat:
+   - Color tokens (paper, ink, espresso, accent + on-dark + dark-wash)
+   - Font tokens (serif/sans + Google Fonts URL via brand.json)
+   - Wash gradients per chapter (achtergrond per scroll-hoofdstuk)
+
+   Wat NIET in dit bestand hoort:
+   - Layout, spacing, transitions → styles.css
+   - Pagina-specifieke content → HTML
+
+   Begin altijd hier wanneer je een nieuwe klant opzet.
+   ================================================================= */
+
+:root {
+  /* gegenereerd door apply-brand.mjs op 2026-08-14T18:35:46.717Z */
+  /* bron: daily.brand.json — bewerk brand.json, niet dit blok */
+
+  /* paper / ink */
+  --paper:        #f4efe6;
+  --paper-2:      #ece3d3;
+  --paper-3:      #e3d8c2;
+  --ink:          #1f1a14;
+  --ink-soft:     #5b5247;
+  --ink-faint:    #8c8275;
+  --line:         rgba(31, 26, 20, 0.14);
+
+  /* espresso (donker) */
+  --espresso:     #211a12;
+  --on-dark:      #f3ece0;
+  --on-dark-soft: #e2d8c5;
+  --line-dark:    rgba(243, 236, 224, 0.16);
+
+  /* accent */
+  --accent:       #a8453a;
+  --accent-deep:  #8a3329;
+  --accent-soft:  #ecc8bd;
+
+  /* fonts */
+  --font-serif:   "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* motion + shell */
+  --ease:  cubic-bezier(0.22, 0.61, 0.36, 1);
+  --shell: min(1180px, 90vw);
+
+  /* footer */
+  --foot-bg: #140e07;
+}
+
+/* =================================================================
+   WASHES — gekleurde achtergronden per scroll-hoofdstuk.
+   Index = chapter index (0..N). Voeg toe of haal weg, maar zorg
+   dat het aantal washes overeenkomt met --ch-count in index.html.
+
+   Tip per palet:
+   - cream/warm: gebruik 2-3 paper-toned washes voor een hero
+   - shift naar espresso voor product/diensten secties
+   - exhale terug naar cream voor referenties/over-pagina
+   - sluit af in espresso voor de slot-CTA
+   ================================================================= */
+
+/* 0 — hero (cream) */
+.wash[data-ch="0"] {
+  background:
+    radial-gradient(125% 95% at 82% 8%, #f9ecda 0%, rgba(249, 236, 218, 0) 55%),
+    radial-gradient(95% 85% at 12% 100%, #efe1cb 0%, rgba(239, 225, 203, 0) 60%),
+    var(--paper);
+}
+/* 1 — warm cream */
+.wash[data-ch="1"] {
+  background:
+    radial-gradient(120% 90% at 15% 12%, #f1e6d1 0%, rgba(241, 230, 209, 0) 55%),
+    linear-gradient(158deg, #ede0c8 0%, #e4d4b6 100%);
+}
+/* 2 — warm sand */
+.wash[data-ch="2"] {
+  background:
+    radial-gradient(130% 100% at 85% 90%, #e9c9a8 0%, rgba(233, 201, 168, 0) 58%),
+    linear-gradient(150deg, #e7d3b7 0%, #d9bd97 100%);
+}
+/* 3 — kantel naar espresso */
+.wash[data-ch="3"] {
+  background:
+    radial-gradient(120% 95% at 20% 15%, #7c5238 0%, rgba(124, 82, 56, 0) 60%),
+    linear-gradient(160deg, #5a3a26 0%, #3c2718 100%);
+}
+/* 4 — diep espresso */
+.wash[data-ch="4"] {
+  background:
+    radial-gradient(115% 90% at 80% 85%, #4a3622 0%, rgba(74, 54, 34, 0) 60%),
+    linear-gradient(160deg, #352618 0%, #221810 100%);
+}
+/* 5 — diepste espresso */
+.wash[data-ch="5"] {
+  background:
+    radial-gradient(120% 100% at 70% 18%, #33271a 0%, rgba(51, 39, 26, 0) 62%),
+    linear-gradient(165deg, #221a10 0%, #150f08 100%);
+}
+/* 6 — exhale naar cream (about) */
+.wash[data-ch="6"] {
+  background:
+    radial-gradient(125% 95% at 18% 12%, #f8edda 0%, rgba(248, 237, 218, 0) 55%),
+    linear-gradient(160deg, #f1e8d8 0%, #e9dec8 100%);
+}
+/* 7 — zelfde cream (about vervolg) */
+.wash[data-ch="7"] {
+  background:
+    radial-gradient(125% 95% at 18% 12%, #f8edda 0%, rgba(248, 237, 218, 0) 55%),
+    linear-gradient(160deg, #f1e8d8 0%, #e9dec8 100%);
+}
+/* 8 — warm cream (referenties) */
+.wash[data-ch="8"] {
+  background:
+    radial-gradient(120% 100% at 82% 88%, #efe2cb 0%, rgba(239, 226, 203, 0) 60%),
+    linear-gradient(158deg, #ece1cc 0%, #e2d4b8 100%);
+}
+/* 9 — slot CTA, terug naar espresso */
+.wash[data-ch="9"] {
+  background:
+    radial-gradient(120% 110% at 75% 12%, #33271a 0%, rgba(51, 39, 26, 0) 60%),
+    linear-gradient(165deg, #221a10 0%, #140e07 100%);
+}
+
+/* =================================================================
+   STATIC FALLBACK — wanneer de stage unpinned is (mobiel of
+   reduced-motion), krijgen de hoofdstukken een gelijkwaardige
+   vlakke achtergrond zodat ze nog steeds van warm naar donker
+   naar warm naar donker lopen.
+   ================================================================= */
+.stage--static .cap[data-ch="0"] { background: var(--paper); }
+.stage--static .cap[data-ch="1"] { background: linear-gradient(158deg, #ede0c8, #e4d4b6); }
+.stage--static .cap[data-ch="2"] { background: linear-gradient(150deg, #e7d3b7, #d9bd97); }
+.stage--static .cap[data-ch="3"] { background: linear-gradient(160deg, #5a3a26, #3c2718); }
+.stage--static .cap[data-ch="4"] { background: linear-gradient(160deg, #352618, #221810); }
+.stage--static .cap[data-ch="5"] { background: linear-gradient(165deg, #221a10, #150f08); }
+.stage--static .cap[data-ch="6"] { background: linear-gradient(160deg, #f1e8d8, #e9dec8); }
+.stage--static .cap[data-ch="7"] { background: linear-gradient(160deg, #f1e8d8, #e9dec8); }
+.stage--static .cap[data-ch="8"] { background: linear-gradient(158deg, #ece1cc, #e2d4b8); }
+.stage--static .cap[data-ch="9"] { background: linear-gradient(165deg, #221a10, #140e07); }
+
+/* =================================================================
+   DETAIL-PAGE WASHES — sub-pagina's gebruiken dezelfde scroll-stage
+   maar dan op puur cream (geen video). 4 herhalende variaties.
+   ================================================================= */
+.stage--detail .wash[data-ch="0"],
+.stage--detail .wash[data-ch="4"] {
+  background:
+    radial-gradient(125% 95% at 78% 8%, #f9ecda 0%, rgba(249, 236, 218, 0) 55%),
+    linear-gradient(160deg, #f4efe6 0%, #ece4d3 100%);
+}
+.stage--detail .wash[data-ch="1"],
+.stage--detail .wash[data-ch="5"] {
+  background:
+    radial-gradient(120% 95% at 18% 12%, #f8edda 0%, rgba(248, 237, 218, 0) 55%),
+    linear-gradient(160deg, #f1e8d8 0%, #e9dec8 100%);
+}
+.stage--detail .wash[data-ch="2"],
+.stage--detail .wash[data-ch="6"] {
+  background:
+    radial-gradient(120% 95% at 82% 25%, #f4e4cd 0%, rgba(244, 228, 205, 0) 58%),
+    linear-gradient(168deg, #ede0c9 0%, #e4d3b7 100%);
+}
+.stage--detail .wash[data-ch="3"] {
+  background:
+    radial-gradient(120% 100% at 25% 80%, #efe2cb 0%, rgba(239, 226, 203, 0) 60%),
+    linear-gradient(158deg, #ece1cc 0%, #e2d4b8 100%);
+}
+
+/* dark-modifier voor wash op detail-page (override naar espresso) */
+.stage--detail .wash--dark[data-ch] {
+  background:
+    radial-gradient(120% 110% at 75% 12%, #33271a 0%, rgba(51, 39, 26, 0) 60%),
+    linear-gradient(165deg, #221a10 0%, #140e07 100%);
+}
+
+.stage--static.stage--detail .cap[data-ch="0"],
+.stage--static.stage--detail .cap[data-ch="4"] { background: linear-gradient(160deg, #f4efe6, #ece4d3); }
+.stage--static.stage--detail .cap[data-ch="1"],
+.stage--static.stage--detail .cap[data-ch="5"] { background: linear-gradient(160deg, #f1e8d8, #e9dec8); }
+.stage--static.stage--detail .cap[data-ch="2"],
+.stage--static.stage--detail .cap[data-ch="6"] { background: linear-gradient(168deg, #ede0c9, #e4d3b7); }
+.stage--static.stage--detail .cap[data-ch="3"] { background: linear-gradient(158deg, #ece1cc, #e2d4b8); }
+.stage--static.stage--detail .cap.cap--dark { background: linear-gradient(165deg, #221a10, #140e07); }
+
+/* =================================================================
+   FOOTER + CURTAIN — donkere oppervlakken die meebewegen met
+   het espresso-palet hierboven. Past zich automatisch aan als je
+   --foot-bg / --espresso aanpast.
+   ================================================================= */
+.foot { background: var(--foot-bg); }
+.page-curtain { background: linear-gradient(168deg, var(--ink) 0%, #2a221a 100%); }

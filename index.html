@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>DAILY — [Tagline in één regel]</title>
+    <meta name="description" content="[Beschrijving voor meta-description en social cards. Twee zinnen, max 160 tekens.]" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/png" href="./media/logo.png" />
+    <link rel="canonical" href="https://placeholder.example" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="preload" as="image" href="./media/ch00-hero.jpg" fetchpriority="high" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:site_name" content="DAILY" />
+    <meta property="og:title" content="DAILY — [Tagline in één regel]" />
+    <meta property="og:description" content="[Beschrijving voor meta-description en social cards. Twee zinnen, max 160 tekens.]" />
+    <meta property="og:url" content="https://placeholder.example" />
+    <meta property="og:image" content="https://placeholder.example/media/ch00-hero.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DAILY — [Tagline in één regel]" />
+    <meta name="twitter:description" content="[Beschrijving voor meta-description en social cards. Twee zinnen, max 160 tekens.]" />
+    <meta name="twitter:image" content="https://placeholder.example/media/ch00-hero.jpg" />
+
+    <link rel="stylesheet" href="./brand.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <a class="skip-link" href="#kern">Naar de inhoud</a>
+
+    <header class="dock" role="banner">
+      <a class="dock__brand" href="#top" aria-label="DAILY, naar boven">
+        <img class="dock__logo" src="./media/logo.png" alt="" />
+        <span class="dock__word">DAILY</span>
+      </a>
+      <nav class="dock__nav" aria-label="Hoofdnavigatie">
+        <a href="./pagina-1.html">[Pagina 1]</a>
+        <a href="./pagina-2.html">[Pagina 2]</a>
+        <a href="./pagina-3.html">[Pagina 3]</a>
+        <a href="./pagina-4.html">[Pagina 4]</a>
+      </nav>
+      <a class="btn btn--ghost dock__cta" href="mailto:hallo@daily.example?subject=DAILY" data-magnetic>
+        <span>[CTA actie]</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+      <button class="dock__menu-btn" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="dock__menu-icon dock__menu-icon--open" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+          <path d="M2 5h14M2 9h14M2 13h14"/>
+        </svg>
+        <svg class="dock__menu-icon dock__menu-icon--close" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 4l10 10M14 4L4 14"/>
+        </svg>
+      </button>
+    </header>
+
+    <div class="menu-overlay" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Hoofdmenu">
+      <button class="menu-overlay__close" type="button" aria-label="Menu sluiten">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <nav class="menu-overlay__nav" aria-label="Mobiele navigatie">
+        <a href="./pagina-1.html">[Pagina 1]</a>
+        <a href="./pagina-2.html">[Pagina 2]</a>
+        <a href="./pagina-3.html">[Pagina 3]</a>
+        <a href="./pagina-4.html">[Pagina 4]</a>
+      </nav>
+      <div class="menu-overlay__foot">
+        <a class="btn btn--ghost menu-overlay__cta" href="mailto:hallo@daily.example?subject=DAILY">
+          <span>[CTA actie]</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14">
+            <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <p class="menu-overlay__contact">
+          <a href="mailto:hallo@daily.example">hallo@daily.example</a>
+        </p>
+      </div>
+    </div>
+
+    <main>
+      <!-- ============================================================
+           SCROLLYTELLING STAGE — one sticky pin, 10 crossfading chapters.
+           Pas --ch-count en het aantal .wash + .cap blokken aan als je
+           hoofdstukken toevoegt of weghaalt.
+           ============================================================ -->
+      <section class="stage" data-stage data-dock="light" aria-label="Het verhaal van DAILY">
+        <div class="stage__track" style="--ch-count: 10;" id="top">
+          <div class="stage__pin">
+            <div class="stage__washes" aria-hidden="true">
+              <div class="wash is-active" data-ch="0"></div>
+              <div class="wash" data-ch="1"></div>
+              <div class="wash" data-ch="2"></div>
+              <div class="wash" data-ch="3"></div>
+              <div class="wash" data-ch="4"></div>
+              <div class="wash" data-ch="5"></div>
+              <div class="wash" data-ch="6"></div>
+              <div class="wash" data-ch="7"></div>
+              <div class="wash" data-ch="8"></div>
+              <div class="wash" data-ch="9"></div>
+            </div>
+
+            <div class="stage__progress" aria-hidden="true"><span></span></div>
+            <div class="stage__count" aria-hidden="true">
+              <span id="capnum">01</span><i>/ 10</i>
+            </div>
+
+            <div class="stage__captions">
+              <!-- 00 · HERO -->
+              <article class="cap cap--hero cap--dark is-active" data-ch="0" data-tone="dark">
+                <div class="cap__video cap__video--hero" aria-hidden="true" style="background-image:url('./media/ch00-hero.jpg')">
+                  <video autoplay muted loop playsinline preload="auto" poster="./media/ch00-hero.jpg">
+                    <source src="./media/ch00-hero.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="cap__card hero">
+                  <p class="eyebrow">[Sector] &nbsp;·&nbsp; [Propositie]</p>
+                  <h1 class="display">
+                    [Kop regel één]<br />
+                    [Kop regel twee]<br />
+                    <em>[Kop regel drie met nadruk]</em>
+                  </h1>
+                  <p class="hero__lede">
+                    [Twee zinnen die de propositie pakkend samenvatten. Beschrijf wat je
+                    doet, voor wie en wat het oplevert.]
+                  </p>
+                  <div class="hero__actions">
+                    <a class="btn btn--primary" href="mailto:hallo@daily.example?subject=DAILY" data-magnetic>
+                      <span>[CTA actie]</span>
+                      <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </a>
+                    <a class="btn btn--ghost" href="#werkwijze">
+                      <span>[Secundaire knop]</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="scroll-hint" aria-hidden="true">
+                  <span>[Scroll-hint]</span>
+                  <i></i>
+                </div>
+              </article>
+
+              <!-- 01 · DE KERN — wanneer/waarom bellen ze jou -->
+              <article class="cap cap--right cap--dark" data-ch="1" data-tone="dark" id="kern">
+                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch01-kern.jpg')">
+                  <video muted loop playsinline preload="metadata" poster="./media/ch01-kern.jpg">
+                    <source src="./media/ch01-kern.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <span class="cap__ghost" data-parallax data-parallax-speed="0.10">[woord]</span>
+                <div class="cap__card">
+                  <p class="cap__kicker">[Kicker — kern]</p>
+                  <h2 class="cap__title">[Kern-titel, één regel.]</h2>
+                  <p class="cap__body">
+                    [Vier à vijf zinnen waarin je het ideale moment van aanhaken beschrijft.
+                    Wat is de situatie van je klant, welk probleem zit hen dwars, en waarom
+                    is jouw aanpak hier de juiste? Schrijf in jij-vorm.]
+                  </p>
+                  <a class="cap__more" href="./pagina-2.html">
+                    [Lees meer link]
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- 02 · HET PROBLEEM — voor wie je werkt -->
+              <article class="cap cap--left cap--dark" data-ch="2" data-tone="dark" id="voor-bedrijven">
+                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch02-probleem.jpg')">
+                  <video muted loop playsinline preload="metadata" poster="./media/ch02-probleem.jpg">
+                    <source src="./media/ch02-probleem.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <span class="cap__ghost" data-parallax data-parallax-speed="0.09">[woord]</span>
+                <div class="cap__card">
+                  <p class="cap__kicker">[Kicker — doelgroep]</p>
+                  <h2 class="cap__title">[Probleem-claim, één regel.]</h2>
+                  <p class="cap__body">
+                    [Drie zinnen die laten zien dat je het pijnpunt van je doelgroep snapt.
+                    Benoem het probleem concreet, niet abstract. Goed: "Het profiel is
+                    te algemeen, intern zoekt iedereen iets anders." Slecht: "Recruitment
+                    is moeilijk."]
+                  </p>
+                  <a class="cap__more" href="./pagina-1.html">
+                    [Lees meer link]
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- 03 · DIENSTEN — 3 product cards -->
+              <article class="cap cap--panel cap--dark" data-ch="3" data-tone="dark">
+                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch03-diensten.jpg')">
+                  <video muted loop playsinline preload="metadata" poster="./media/ch03-diensten.jpg">
+                    <source src="./media/ch03-diensten.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <span class="cap__ghost" data-parallax data-parallax-speed="0.08">[woord]</span>
+                <div class="cap__panel cap__services-wrap">
+                  <header class="cap__services-head">
+                    <p class="cap__kicker">[Kicker — diensten]</p>
+                    <h2 class="cap__title">[Diensten-claim, één regel.]</h2>
+                  </header>
+                  <div class="cap__services-grid">
+                    <a class="service-card" href="./pagina-1.html">
+                      <p class="service-card__num">01</p>
+                      <h3 class="service-card__title">[Card titel 1]</h3>
+                      <p class="service-card__body">[Eén zin uitleg.]</p>
+                    </a>
+                    <a class="service-card" href="./pagina-2.html">
+                      <p class="service-card__num">02</p>
+                      <h3 class="service-card__title">[Card titel 2]</h3>
+                      <p class="service-card__body">[Eén zin uitleg.]</p>
+                    </a>
+                    <a class="service-card" href="./pagina-3.html">
+                      <p class="service-card__num">03</p>
+                      <h3 class="service-card__title">[Card titel 3]</h3>
+                      <p class="service-card__body">[Eén zin uitleg.]</p>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 04 · WERKWIJZE — 5 step-cards -->
+              <article class="cap cap--panel cap--dark" data-ch="4" data-tone="dark" id="werkwijze">
+                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch04-werkwijze.jpg')">
+                  <video muted loop playsinline preload="metadata" poster="./media/ch04-werkwijze.jpg">
+                    <source src="./media/ch04-werkwijze.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <span class="cap__ghost" data-parallax data-parallax-speed="0.08">[woord]</span>
+                <div class="cap__panel cap__services-wrap cap__services-wrap--wide">
+                  <header class="cap__services-head">
+                    <p class="cap__kicker">[Kicker — werkwijze]</p>
+                    <h2 class="cap__title">[Werkwijze-claim, drie woorden.]</h2>
+                  </header>
+                  <div class="cap__steps-grid">
+                    <article class="service-card service-card--step">
+                      <p class="service-card__num">01</p>
+                      <h3 class="service-card__title">[Stap 1]</h3>
+                      <p class="service-card__body">[Eén zin uitleg.]</p>
+                    </article>
+                    <article class="service-card service-card--step">
+                      <p class="service-card__num">02</p>
+                      <h3 class="service-card__title">[Stap 2]</h3>
+                      <p class="service-card__body">[Eén zin uitleg.]</p>
+                    </article>
+                    <article class="service-card service-card--step">
+                      <p class="service-card__num">03</p>
+                      <h3 class="service-card__title">[Stap 3]</h3>
+                      <p class="service-card__body">[Eén zin uitleg.]</p>
+                    </article>
+                    <article class="service-card service-card--step">
+                      <p class="service-card__num">04</p>
+                      <h3 class="service-card__title">[Stap 4]</h3>
+                      <p class="service-card__body">[Eén zin uitleg.]</p>
+                    </article>
+                    <article class="service-card service-card--step">
+                      <p class="service-card__num">05</p>
+                      <h3 class="service-card__title">[Stap 5]</h3>
+                      <p class="service-card__body">[Eén zin uitleg.]</p>
+                    </article>
+                  </div>
+                  <div class="cap__services-foot">
+                    <a class="cap__more" href="./pagina-4.html">
+                      [Lees meer link]
+                      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 05 · TWEEDE DOELGROEP — bv. kandidaten, klanten, partners -->
+              <article class="cap cap--right cap--dark" data-ch="5" data-tone="dark" id="voor-tweede-doelgroep">
+                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch05-tweede.jpg')">
+                  <video muted loop playsinline preload="metadata" poster="./media/ch05-tweede.jpg">
+                    <source src="./media/ch05-tweede.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <span class="cap__ghost" data-parallax data-parallax-speed="0.07">[woord]</span>
+                <div class="cap__card">
+                  <p class="cap__kicker">[Kicker — tweede doelgroep]</p>
+                  <h2 class="cap__title">[Belofte aan tweede doelgroep, één regel.]</h2>
+                  <p class="cap__body">
+                    [Drie zinnen waarin je laat zien wat je voor de tweede doelgroep doet —
+                    bijvoorbeeld kandidaten, klanten, of partners. Verschuif van bedrijfs-
+                    naar persoonsperspectief.]
+                  </p>
+                  <a class="cap__more" href="./pagina-3.html">
+                    [Lees meer link]
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- 06 · OVER — portret + intro -->
+              <article class="cap cap--panel cap--light" data-ch="6" data-tone="light" id="over">
+                <div class="cap__panel cap__about">
+                  <figure class="portrait portrait--arch">
+                    <img class="portrait__img" src="./media/portrait.jpg" alt="Portret van DAILY" />
+                  </figure>
+
+                  <div class="about__text">
+                    <p class="cap__kicker">[Kicker — over]</p>
+                    <h2 class="about__title">[Persoonlijke claim in één regel.]</h2>
+                    <div class="about__body">
+                      <p>
+                        [Vijf à zes zinnen waarin je vertelt wie je bent, vanuit welk
+                        perspectief je werkt, en wat opdrachtgevers van je mogen verwachten.
+                        Hou het op de toon van het visitekaartje, niet op een CV-toon.]
+                      </p>
+                    </div>
+                    <a class="cap__more" href="./pagina-5.html">
+                      [Lees meer link]
+                      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 07 · OVER VERVOLG — zelfde portret-layout, andere tekst (quote) -->
+              <article class="cap cap--panel cap--light" data-ch="7" data-tone="light">
+                <div class="cap__panel cap__about">
+                  <figure class="portrait portrait--arch">
+                    <img class="portrait__img" src="./media/portrait.jpg" alt="" />
+                  </figure>
+
+                  <div class="about__text">
+                    <p class="cap__kicker">[Kicker — over vervolg]</p>
+                    <blockquote class="pull-quote pull-quote--lead">
+                      [Een sterke quote of overtuiging die je werk samenvat in één zin.]
+                    </blockquote>
+                    <div class="about__body">
+                      <p>
+                        [Vier zinnen die je inzetbaarheid breder maken — denk aan interim-rollen,
+                        projectleiding, of een specifieke expertise waar je voor gevraagd wordt.]
+                      </p>
+                    </div>
+                    <a class="cap__more" href="./pagina-5.html">
+                      [Lees meer link]
+                      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 08 · REFERENTIES — 3 quote cards -->
+              <article class="cap cap--panel cap--light" data-ch="8" data-tone="light" id="referenties">
+                <div class="cap__panel cap__quotes">
+                  <header class="quotes__head">
+                    <p class="cap__kicker">[Kicker — referenties]</p>
+                    <h2 class="quotes__title">[Referenties claim, één regel.]</h2>
+                  </header>
+                  <div class="quotes__grid">
+                    <figure class="quote-card">
+                      <p class="quote-card__lead">&ldquo;[Korte krachtige samenvatting]&rdquo;</p>
+                      <blockquote>
+                        [Drie à vier zinnen quote. Liever specifiek dan algemeen — noem situaties,
+                        gedrag of resultaten in plaats van bijvoeglijke naamwoorden.]
+                      </blockquote>
+                      <figcaption>
+                        <span class="quote-card__name">[Naam]</span>
+                        <span class="quote-card__role">[Functie · Bedrijf]</span>
+                      </figcaption>
+                    </figure>
+
+                    <figure class="quote-card">
+                      <p class="quote-card__lead">&ldquo;[Korte krachtige samenvatting]&rdquo;</p>
+                      <blockquote>
+                        [Drie à vier zinnen quote.]
+                      </blockquote>
+                      <figcaption>
+                        <span class="quote-card__name">[Naam]</span>
+                        <span class="quote-card__role">[Functie · Bedrijf]</span>
+                      </figcaption>
+                    </figure>
+
+                    <figure class="quote-card">
+                      <p class="quote-card__lead">&ldquo;[Korte krachtige samenvatting]&rdquo;</p>
+                      <blockquote>
+                        [Drie à vier zinnen quote.]
+                      </blockquote>
+                      <figcaption>
+                        <span class="quote-card__name">[Naam]</span>
+                        <span class="quote-card__role">[Functie · Bedrijf]</span>
+                      </figcaption>
+                    </figure>
+                  </div>
+                  <div class="refs-progress" aria-hidden="true"><span></span></div>
+                  <div class="cap__services-foot">
+                    <a class="cap__more" href="mailto:hallo@daily.example?subject=DAILY">
+                      [Lees meer link]
+                      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 09 · SLOT — closing CTA -->
+              <article class="cap cap--closer cap--dark" data-ch="9" data-tone="dark">
+                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch09-slot.jpg')">
+                  <video muted loop playsinline preload="metadata" poster="./media/ch09-slot.jpg">
+                    <source src="./media/ch09-slot.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="cap__card closer__inner">
+                  <p class="eyebrow eyebrow--accent">[Slot eyebrow]</p>
+                  <p class="closer__line">
+                    [Eén krachtige slotzin. Geef ruimte aan een <em>geaccentueerd</em> woord
+                    voor visuele rust.]
+                  </p>
+                  <a class="btn btn--primary btn--lg" href="mailto:hallo@daily.example?subject=DAILY" data-magnetic>
+                    <span>[CTA actie]</span>
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot" data-dock="dark">
+      <div class="foot__grid">
+        <div class="foot__brand">
+          <img class="dock__logo dock__logo--ondark" src="./media/logo.png" alt="DAILY" />
+          <p class="foot__tag">[Korte footer-beschrijving over het merk in één à twee zinnen.]</p>
+        </div>
+        <div>
+          <h3>[Footer kop 1]</h3>
+          <ul>
+            <li><a href="./pagina-1.html">[Pagina 1]</a></li>
+            <li><a href="./pagina-2.html">[Pagina 2]</a></li>
+            <li><a href="./pagina-3.html">[Pagina 3]</a></li>
+            <li><a href="./pagina-4.html">[Pagina 4]</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <address>
+            <a href="mailto:hallo@daily.example">hallo@daily.example</a><br />
+            <a href="tel:+31600000000">+31 6 00 00 00 00</a><br />
+            [Stad] &middot; Nederland<br />
+            <a href="https://www.linkedin.com/company/placeholder/" target="_blank" rel="noopener">LinkedIn</a>
+          </address>
+        </div>
+      </div>
+      <div class="foot__bar">
+        <span>DAILY &nbsp;·&nbsp; DAILY &nbsp;·&nbsp; &copy; 2026</span>
+        <a href="https://bold700.com" target="_blank" rel="noopener" class="foot__powered">Powered by <strong>BOLD700</strong></a>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="./app.js" defer></script>
+    <div class="page-curtain" data-page-curtain aria-hidden="true">
+      <img class="page-curtain__mark" src="./media/logo.png" alt="" />
+      <span class="page-curtain__word">DAILY</span>
+    </div>
+    <noscript><style>[data-page-curtain]{display:none!important}</style></noscript>
+  </body>
+</html>
