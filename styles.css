@@ -1732,6 +1732,7 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
 .shot.is-active { opacity: 1; }
 /* img en video zijn uitwisselbaar: dezelfde regels, dezelfde uitsnede,
    zodat een JPG later 1-op-1 door een MP4 vervangen kan worden */
+.shot picture { display: block; width: 100%; height: 100%; }
 .shot img,
 .shot video {
   display: block;
@@ -2004,24 +2005,21 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
   .stage__track { height: calc(var(--ch-count, 6) * 100svh); }
   .stage__pin { height: 100svh; }
 
-  /* beeld onderin, tekst erboven */
-  .stage--product .stage__media {
-    top: auto;
-    bottom: 0;
-    height: 56svh;
-  }
+  /* het beeld is op mobiel staand (1080 x 1920) en vult het hele scherm;
+     de fles staat daar zelf al laag, met rust erboven voor de tekst */
+  .stage--product .stage__media { inset: 0; height: auto; }
   .stage--product .shot img,
-  .stage--product .shot video { object-position: 50% 58%; }
+  .stage--product .shot video { object-position: 50% 50%; }
 
-  /* zachte overgang van het beeld naar de vlakke achtergrond erboven */
+  /* scrim bovenaan, waar de tekst staat; onderin blijft de fles vrij */
   .stage--product .stage__media::after {
     background: linear-gradient(
       180deg,
-      rgba(10, 7, 3, 0.94) 0%,
-      rgba(10, 7, 3, 0.42) 16%,
-      rgba(10, 7, 3, 0.14) 44%,
-      rgba(10, 7, 3, 0.48) 78%,
-      rgba(10, 7, 3, 0.8) 100%
+      rgba(10, 7, 3, 0.88) 0%,
+      rgba(10, 7, 3, 0.7) 26%,
+      rgba(10, 7, 3, 0.28) 46%,
+      rgba(10, 7, 3, 0.1) 62%,
+      rgba(10, 7, 3, 0.42) 100%
     );
   }
   .stage--product .stage__pin { background: var(--espresso); }
@@ -2065,7 +2063,6 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
 
 /* extra krap: kleine telefoons */
 @media (max-width: 380px) {
-  .stage--product .stage__media { height: 54svh; }
   .stage--product .cap { padding-top: 72px; }
   .stage--product .cap__title { font-size: 1.3rem; }
 }
