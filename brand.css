@@ -132,16 +132,12 @@
    vlakke achtergrond zodat ze nog steeds van warm naar donker
    naar warm naar donker lopen.
    ================================================================= */
-.stage--static .cap[data-ch="0"] { background: var(--paper); }
-.stage--static .cap[data-ch="1"] { background: linear-gradient(158deg, #ede0c8, #e4d4b6); }
-.stage--static .cap[data-ch="2"] { background: linear-gradient(150deg, #e7d3b7, #d9bd97); }
-.stage--static .cap[data-ch="3"] { background: linear-gradient(160deg, #5a3a26, #3c2718); }
-.stage--static .cap[data-ch="4"] { background: linear-gradient(160deg, #352618, #221810); }
-.stage--static .cap[data-ch="5"] { background: linear-gradient(165deg, #221a10, #150f08); }
-.stage--static .cap[data-ch="6"] { background: linear-gradient(160deg, #f1e8d8, #e9dec8); }
-.stage--static .cap[data-ch="7"] { background: linear-gradient(160deg, #f1e8d8, #e9dec8); }
-.stage--static .cap[data-ch="8"] { background: linear-gradient(158deg, #ece1cc, #e2d4b8); }
-.stage--static .cap[data-ch="9"] { background: linear-gradient(165deg, #221a10, #140e07); }
+/* Statische fallback (mobiel + reduced-motion): elk hoofdstuk toont zijn
+   eigen productbeeld. app.js zet --shot per hoofdstuk; hier alleen de
+   basiskleur eronder, zodat er nooit een lege cap in beeld staat.
+   Let op: gebruik hier geen background-shorthand, die zou het beeld
+   uit styles.css wegvagen. */
+.stage--static .cap { background-color: #141517; }
 
 /* =================================================================
    DETAIL-PAGE WASHES — sub-pagina's gebruiken dezelfde scroll-stage
