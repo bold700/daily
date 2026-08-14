@@ -130,12 +130,26 @@
     const N = caps.length;
     const isNarrow = window.matchMedia("(max-width: 700px)").matches;
 
+    /* De gedeelde media-laag: één beeld per hoofdstuk, allemaal op
+       dezelfde plek. Alleen de opacity wisselt, zodat de fles tijdens
+       de crossfade exact blijft staan. */
+    const shots = Array.from(stage.querySelectorAll(".shot"));
+    const shotSrc = (el) => {
+      const m = el && el.querySelector("img, video source, video");
+      return m ? m.getAttribute("src") || m.getAttribute("poster") : null;
+    };
+
     if (reduced || isNarrow) {
       /* static fallback: unpin, every chapter visible and stacked.
          Used for reduced-motion and for small viewports, where a
-         pinned crossfade does not suit the longer panels. */
+         pinned crossfade does not suit the longer panels. Elk
+         hoofdstuk krijgt zijn eigen beeld als achtergrond. */
       stage.classList.add("stage--static");
-      caps.forEach((c) => c.classList.add("is-active"));
+      caps.forEach((c, i) => {
+        c.classList.add("is-active");
+        const src = shotSrc(shots[i]);
+        if (src) c.style.setProperty("--shot", `url("${src}")`);
+      });
     } else if (N) {
       let activeIdx = -1;
 
@@ -151,7 +165,26 @@
 
         if (idx !== activeIdx) {
           washes.forEach((w, i) => w.classList.toggle("is-active", i === idx));
+          shots.forEach((s, i) => s.classList.toggle("is-active", i === idx));
           caps.forEach((c, i) => c.classList.toggle("is-active", i === idx));
+
+          /* het volgende beeld alvast inladen, anders flikkert de
+             crossfade de eerste keer */
+          const next = shots[idx + 1];
+          if (next) {
+            const img = next.querySelector("img");
+            if (img && img.loading === "lazy") img.loading = "eager";
+            const src = shotSrc(next);
+            if (src) new Image().src = src;
+          }
+
+          /* alleen de actieve shot speelt, zodra het video's worden */
+          shots.forEach((s, i) => {
+            const v = s.querySelector("video");
+            if (!v) return;
+            if (i === idx) v.play().catch(() => {});
+            else v.pause();
+          });
           stage.dataset.tone = caps[idx].dataset.tone || "light";
           stage.dataset.dock = stage.dataset.tone;
           if (counter) counter.textContent = String(idx + 1).padStart(2, "0");

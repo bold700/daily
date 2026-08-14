@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="dark" />
     <title>DAILY — Je dagelijkse creatine. Zonder gedoe.</title>
     <meta name="description" content="Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard in de dop. Geen pot, schep of shaker nodig." />
 
@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="./media/logo.png" />
     <link rel="canonical" href="https://placeholder.example" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <link rel="preload" as="image" href="./media/ch00-hero.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="./media/daily-ch00-hero.jpg" fetchpriority="high" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -23,13 +23,13 @@
     <meta property="og:title" content="DAILY — Je dagelijkse creatine. Zonder gedoe." />
     <meta property="og:description" content="Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard in de dop. Geen pot, schep of shaker nodig." />
     <meta property="og:url" content="https://placeholder.example" />
-    <meta property="og:image" content="https://placeholder.example/media/ch00-hero.jpg" />
+    <meta property="og:image" content="https://placeholder.example/media/daily-ch00-hero.jpg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="DAILY — Je dagelijkse creatine. Zonder gedoe." />
     <meta name="twitter:description" content="Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard in de dop. Geen pot, schep of shaker nodig." />
-    <meta name="twitter:image" content="https://placeholder.example/media/ch00-hero.jpg" />
+    <meta name="twitter:image" content="https://placeholder.example/media/daily-ch00-hero.jpg" />
 
     <link rel="stylesheet" href="./brand.css" />
     <link rel="stylesheet" href="./styles.css" />
@@ -94,11 +94,22 @@
 
     <main>
       <!-- ============================================================
-           SCROLLYTELLING STAGE — één sticky pin, 10 crossfadende
-           hoofdstukken. Volgorde: hero, probleem, product, zo werkt
-           het, eerlijk verschil, momenten, smaken, verhaal, FAQ, slot.
+           SCROLLYTELLING STAGE
+
+           Eén sticky pin van 100vh. De fles is de hoofdpersoon: alle
+           tien beelden staan in dezelfde .stage__media laag en faden
+           met opacity in elkaar over, zodat het product nooit
+           verspringt. Per hoofdstuk verandert alleen de omgeving,
+           het licht en de status van de creatine.
+
+           De teksten staan als losse HTML in .stage__captions en
+           wisselen links en rechts van de centrale fles.
+
+           Elke .shot is voorbereid op video: vervang de <img> door
+           <video autoplay muted loop playsinline poster="...">
+           zonder de layout aan te raken.
            ============================================================ -->
-      <section class="stage" data-stage data-dock="light" aria-label="Het verhaal van DAILY">
+      <section class="stage stage--product" data-stage data-dock="dark" aria-label="Het verhaal van DAILY">
         <div class="stage__track" style="--ch-count: 10;" id="top">
           <div class="stage__pin">
             <div class="stage__washes" aria-hidden="true">
@@ -114,19 +125,48 @@
               <div class="wash" data-ch="9"></div>
             </div>
 
+            <!-- Gedeelde media-laag: de fles blijft staan, de omgeving wisselt -->
+            <div class="stage__media" data-media aria-hidden="true">
+              <figure class="shot is-active" data-ch="0">
+                <img src="./media/daily-ch00-hero.jpg" alt="" fetchpriority="high" />
+              </figure>
+              <figure class="shot" data-ch="1">
+                <img src="./media/daily-ch01-problem.jpg" alt="" loading="lazy" />
+              </figure>
+              <figure class="shot" data-ch="2">
+                <img src="./media/daily-ch02-product.jpg" alt="" loading="lazy" />
+              </figure>
+              <figure class="shot" data-ch="3">
+                <img src="./media/daily-ch03-activate.jpg" alt="" loading="lazy" />
+              </figure>
+              <figure class="shot" data-ch="4">
+                <img src="./media/daily-ch04-difference.jpg" alt="" loading="lazy" />
+              </figure>
+              <figure class="shot" data-ch="5">
+                <img src="./media/daily-ch05-moments.jpg" alt="" loading="lazy" />
+              </figure>
+              <figure class="shot" data-ch="6">
+                <img src="./media/daily-ch06-flavours.jpg" alt="" loading="lazy" />
+              </figure>
+              <figure class="shot" data-ch="7">
+                <img src="./media/daily-ch07-story.jpg" alt="" loading="lazy" />
+              </figure>
+              <figure class="shot" data-ch="8">
+                <img src="./media/daily-ch08-detail.jpg" alt="" loading="lazy" />
+              </figure>
+              <figure class="shot" data-ch="9">
+                <img src="./media/daily-ch09-cta.jpg" alt="" loading="lazy" />
+              </figure>
+            </div>
+
             <div class="stage__progress" aria-hidden="true"><span></span></div>
             <div class="stage__count" aria-hidden="true">
               <span id="capnum">01</span><i>/ 10</i>
             </div>
 
             <div class="stage__captions">
-              <!-- 00 · HERO -->
+              <!-- 00 · HERO — tekst links -->
               <article class="cap cap--hero cap--dark is-active" data-ch="0" data-tone="dark">
-                <div class="cap__video cap__video--hero" aria-hidden="true" style="background-image:url('./media/ch00-hero.jpg')">
-                  <video autoplay muted loop playsinline preload="auto" poster="./media/ch00-hero.jpg">
-                    <source src="./media/ch00-hero.mp4" type="video/mp4" />
-                  </video>
-                </div>
                 <div class="cap__card hero">
                   <p class="eyebrow">Elektrolyten &nbsp;·&nbsp; 5 g creatine</p>
                   <h1 class="display">
@@ -156,15 +196,9 @@
                 </div>
               </article>
 
-              <!-- 01 · HET PROBLEEM -->
+              <!-- 01 · HET PROBLEEM — tekst rechts -->
               <article class="cap cap--right cap--dark" data-ch="1" data-tone="dark" id="probleem">
-                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch01-kern.jpg')">
-                  <video muted loop playsinline preload="metadata" poster="./media/ch01-kern.jpg">
-                    <source src="./media/ch01-kern.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <span class="cap__ghost" data-parallax data-parallax-speed="0.10">routine</span>
-                <div class="cap__card">
+                <div class="cap__card cap__col">
                   <p class="cap__kicker">Waarom we dit maken</p>
                   <h2 class="cap__title">Het probleem is niet creatine. Het is de routine.</h2>
                   <p class="cap__body">
@@ -178,81 +212,71 @@
                 </div>
               </article>
 
-              <!-- 02 · HET PRODUCT — 3 cards -->
-              <article class="cap cap--panel cap--dark" data-ch="2" data-tone="dark" id="product">
-                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch02-probleem.jpg')">
-                  <video muted loop playsinline preload="metadata" poster="./media/ch02-probleem.jpg">
-                    <source src="./media/ch02-probleem.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <span class="cap__ghost" data-parallax data-parallax-speed="0.09">creatine</span>
-                <div class="cap__panel cap__services-wrap">
-                  <header class="cap__services-head">
-                    <p class="cap__kicker">Één fles · één routine</p>
-                    <h2 class="cap__title">Alles wat je nodig hebt. Pas gemixt wanneer jij het drinkt.</h2>
-                  </header>
-                  <div class="cap__services-grid">
-                    <article class="service-card">
-                      <p class="service-card__num">01</p>
-                      <h3 class="service-card__title">5 gram creatine</h3>
-                      <p class="service-card__body">Eén afgemeten portie, droog bewaard in de doseerdop.</p>
+              <!-- 02 · HET PRODUCT — tekst links, drie kaarten gestapeld -->
+              <article class="cap cap--left cap--dark" data-ch="2" data-tone="dark" id="product">
+                <div class="cap__card cap__col">
+                  <p class="cap__kicker">Één fles · één routine</p>
+                  <h2 class="cap__title">Alles wat je nodig hebt. Pas gemixt wanneer jij het drinkt.</h2>
+                  <div class="cap__stack">
+                    <article class="stack-card">
+                      <p class="stack-card__num">01</p>
+                      <div>
+                        <h3 class="stack-card__title">5 gram creatine</h3>
+                        <p class="stack-card__body">Eén afgemeten portie, droog bewaard in de doseerdop.</p>
+                      </div>
                     </article>
-                    <article class="service-card">
-                      <p class="service-card__num">02</p>
-                      <h3 class="service-card__title">Elektrolytenwater</h3>
-                      <p class="service-card__body">Een verfrissende basis die je makkelijk gedurende je dag drinkt.</p>
+                    <article class="stack-card">
+                      <p class="stack-card__num">02</p>
+                      <div>
+                        <h3 class="stack-card__title">Elektrolytenwater</h3>
+                        <p class="stack-card__body">Een verfrissende basis die je makkelijk gedurende je dag drinkt.</p>
+                      </div>
                     </article>
-                    <article class="service-card">
-                      <p class="service-card__num">03</p>
-                      <h3 class="service-card__title">Ready to go</h3>
-                      <p class="service-card__body">Geen voorbereiding, losse zakjes of shaker. Pakken en meenemen.</p>
+                    <article class="stack-card">
+                      <p class="stack-card__num">03</p>
+                      <div>
+                        <h3 class="stack-card__title">Ready to go</h3>
+                        <p class="stack-card__body">Geen voorbereiding, losse zakjes of shaker. Pakken en meenemen.</p>
+                      </div>
                     </article>
                   </div>
                 </div>
               </article>
 
-              <!-- 03 · ZO WERKT HET — 3 stappen -->
-              <article class="cap cap--panel cap--dark" data-ch="3" data-tone="dark" id="zo-werkt-het">
-                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch03-diensten.jpg')">
-                  <video muted loop playsinline preload="metadata" poster="./media/ch03-diensten.jpg">
-                    <source src="./media/ch03-diensten.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <span class="cap__ghost" data-parallax data-parallax-speed="0.08">draai</span>
-                <div class="cap__panel cap__services-wrap">
-                  <header class="cap__services-head">
-                    <p class="cap__kicker">Simpel vanaf de eerste slok</p>
-                    <h2 class="cap__title">Draai. Schud. Drink.</h2>
-                  </header>
-                  <div class="cap__steps-grid cap__steps-grid--three">
-                    <article class="service-card service-card--step">
-                      <p class="service-card__num">01</p>
-                      <h3 class="service-card__title">Draai</h3>
-                      <p class="service-card__body">Activeer de dop en laat de creatine in het drankje vallen.</p>
+              <!-- 03 · ZO WERKT HET — tekst rechts, drie stappen -->
+              <article class="cap cap--right cap--dark" data-ch="3" data-tone="dark" id="zo-werkt-het">
+                <div class="cap__card cap__col">
+                  <p class="cap__kicker">Simpel vanaf de eerste slok</p>
+                  <h2 class="cap__title">Draai. Schud. Drink.</h2>
+                  <div class="cap__stack">
+                    <article class="stack-card">
+                      <p class="stack-card__num">01</p>
+                      <div>
+                        <h3 class="stack-card__title">Draai</h3>
+                        <p class="stack-card__body">Activeer de dop en laat de creatine in het drankje vallen.</p>
+                      </div>
                     </article>
-                    <article class="service-card service-card--step">
-                      <p class="service-card__num">02</p>
-                      <h3 class="service-card__title">Schud</h3>
-                      <p class="service-card__body">Meng de creatine kort door het water.</p>
+                    <article class="stack-card">
+                      <p class="stack-card__num">02</p>
+                      <div>
+                        <h3 class="stack-card__title">Schud</h3>
+                        <p class="stack-card__body">Meng de creatine kort door het water.</p>
+                      </div>
                     </article>
-                    <article class="service-card service-card--step">
-                      <p class="service-card__num">03</p>
-                      <h3 class="service-card__title">Drink</h3>
-                      <p class="service-card__body">Open de fles en ga verder met je dag.</p>
+                    <article class="stack-card">
+                      <p class="stack-card__num">03</p>
+                      <div>
+                        <h3 class="stack-card__title">Drink</h3>
+                        <p class="stack-card__body">Open de fles en ga verder met je dag.</p>
+                      </div>
                     </article>
                   </div>
                 </div>
               </article>
 
-              <!-- 04 · EERLIJK VERSCHIL -->
+              <!-- 04 · EERLIJK VERSCHIL — tekst links -->
               <article class="cap cap--left cap--dark" data-ch="4" data-tone="dark" id="eerlijk">
-                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch04-werkwijze.jpg')">
-                  <video muted loop playsinline preload="metadata" poster="./media/ch04-werkwijze.jpg">
-                    <source src="./media/ch04-werkwijze.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <span class="cap__ghost" data-parallax data-parallax-speed="0.08">eerlijk</span>
-                <div class="cap__card">
+                <div class="cap__card cap__col">
                   <p class="cap__kicker">Waarom niet gewoon poeder en kraanwater?</p>
                   <h2 class="cap__title">Niet goedkoper dan kraanwater. Wel makkelijker dan je hele routine.</h2>
                   <p class="cap__body">
@@ -266,144 +290,132 @@
                 </div>
               </article>
 
-              <!-- 05 · DE MOMENTEN — 3 cards -->
-              <article class="cap cap--panel cap--dark" data-ch="5" data-tone="dark" id="momenten">
-                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch05-tweede.jpg')">
-                  <video muted loop playsinline preload="metadata" poster="./media/ch05-tweede.jpg">
-                    <source src="./media/ch05-tweede.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <span class="cap__ghost" data-parallax data-parallax-speed="0.07">onderweg</span>
-                <div class="cap__panel cap__services-wrap">
-                  <header class="cap__services-head">
-                    <p class="cap__kicker">Voor dagen die vol zitten</p>
-                    <h2 class="cap__title">Een dagelijkse routine die met je meegaat.</h2>
-                  </header>
-                  <div class="cap__services-grid">
-                    <article class="service-card">
-                      <p class="service-card__num">01</p>
-                      <h3 class="service-card__title">Op het werk</h3>
-                      <p class="service-card__body">Een functioneel alternatief voor het zoveelste standaard drankje.</p>
+              <!-- 05 · DE MOMENTEN — tekst rechts -->
+              <article class="cap cap--right cap--dark" data-ch="5" data-tone="dark" id="momenten">
+                <div class="cap__card cap__col">
+                  <p class="cap__kicker">Voor dagen die vol zitten</p>
+                  <h2 class="cap__title">Een dagelijkse routine die met je meegaat.</h2>
+                  <div class="cap__stack">
+                    <article class="stack-card">
+                      <p class="stack-card__num">01</p>
+                      <div>
+                        <h3 class="stack-card__title">Op het werk</h3>
+                        <p class="stack-card__body">Een functioneel alternatief voor het zoveelste standaard drankje.</p>
+                      </div>
                     </article>
-                    <article class="service-card">
-                      <p class="service-card__num">02</p>
-                      <h3 class="service-card__title">Na het sporten</h3>
-                      <p class="service-card__body">Je creatine direct bij je, zonder een shaker mee te nemen.</p>
+                    <article class="stack-card">
+                      <p class="stack-card__num">02</p>
+                      <div>
+                        <h3 class="stack-card__title">Na het sporten</h3>
+                        <p class="stack-card__body">Je creatine direct bij je, zonder een shaker mee te nemen.</p>
+                      </div>
                     </article>
-                    <article class="service-card">
-                      <p class="service-card__num">03</p>
-                      <h3 class="service-card__title">Onderweg</h3>
-                      <p class="service-card__body">Van sportschool tot tankstation en van kantoor tot supermarkt.</p>
+                    <article class="stack-card">
+                      <p class="stack-card__num">03</p>
+                      <div>
+                        <h3 class="stack-card__title">Onderweg</h3>
+                        <p class="stack-card__body">Van sportschool tot tankstation en van kantoor tot supermarkt.</p>
+                      </div>
                     </article>
                   </div>
                 </div>
               </article>
 
-              <!-- 06 · DE SMAKEN -->
-              <article class="cap cap--panel cap--light" data-ch="6" data-tone="light" id="smaken">
-                <div class="cap__panel cap__quotes">
-                  <header class="quotes__head">
-                    <p class="cap__kicker">De eerste batch</p>
-                    <h2 class="quotes__title">Welke zou jij kiezen?</h2>
-                  </header>
-                  <div class="quotes__grid">
-                    <figure class="quote-card">
-                      <p class="quote-card__lead">Pure</p>
-                      <blockquote>Clean, fris en subtiel.</blockquote>
-                    </figure>
-                    <figure class="quote-card">
-                      <p class="quote-card__lead">Lemon + Sea Salt</p>
-                      <blockquote>Fris, licht zout en makkelijk drinkbaar.</blockquote>
-                    </figure>
-                    <figure class="quote-card">
-                      <p class="quote-card__lead">Blood Orange</p>
-                      <blockquote>Fruitig, volwassen en niet te zoet.</blockquote>
-                    </figure>
+              <!-- 06 · DE SMAKEN — tekst links -->
+              <article class="cap cap--left cap--dark" data-ch="6" data-tone="dark" id="smaken">
+                <div class="cap__card cap__col">
+                  <p class="cap__kicker">De eerste batch</p>
+                  <h2 class="cap__title">Welke zou jij kiezen?</h2>
+                  <div class="cap__stack">
+                    <article class="stack-card stack-card--flavour">
+                      <span class="flavour-dot flavour-dot--pure" aria-hidden="true"></span>
+                      <div>
+                        <h3 class="stack-card__title">Pure</h3>
+                        <p class="stack-card__body">Clean, fris en subtiel.</p>
+                      </div>
+                    </article>
+                    <article class="stack-card stack-card--flavour">
+                      <span class="flavour-dot flavour-dot--lemon" aria-hidden="true"></span>
+                      <div>
+                        <h3 class="stack-card__title">Lemon + Sea Salt</h3>
+                        <p class="stack-card__body">Fris, licht zout en makkelijk drinkbaar.</p>
+                      </div>
+                    </article>
+                    <article class="stack-card stack-card--flavour">
+                      <span class="flavour-dot flavour-dot--blood" aria-hidden="true"></span>
+                      <div>
+                        <h3 class="stack-card__title">Blood Orange</h3>
+                        <p class="stack-card__body">Fruitig, volwassen en niet te zoet.</p>
+                      </div>
+                    </article>
                   </div>
-                  <div class="cap__services-foot">
-                    <a class="cap__more" href="mailto:hallo@daily.example?subject=Mijn%20favoriete%20DAILY-smaak">
-                      Stem op jouw favoriete smaak
-                      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
-                        <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </a>
-                  </div>
+                  <a class="cap__more" href="mailto:hallo@daily.example?subject=Mijn%20favoriete%20DAILY-smaak">
+                    Stem op jouw favoriete smaak
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
                 </div>
               </article>
 
-              <!-- 07 · ONS VERHAAL -->
-              <article class="cap cap--panel cap--light" data-ch="7" data-tone="light" id="verhaal">
-                <div class="cap__panel cap__about">
-                  <figure class="portrait portrait--arch">
-                    <img class="portrait__img" src="./media/portrait.jpg" alt="De makers van DAILY" />
-                  </figure>
-
-                  <div class="about__text">
-                    <p class="cap__kicker">Gemaakt vanuit ons eigen leven</p>
-                    <h2 class="about__title">Het product dat we zelf misten.</h2>
-                    <div class="about__body">
-                      <p>
-                        We sporten veel, runnen onze bedrijven en proberen goed voor onszelf
-                        te zorgen. Maar op drukke dagen winnen gemak en routine het altijd
-                        van goede intenties.
-                      </p>
-                      <p>
-                        Daarom maken we geen ingewikkeld supplement. We maken een lekker
-                        drankje dat je graag meeneemt en waarmee je jouw creatine niet meer
-                        hoeft te vergeten.
-                      </p>
-                    </div>
-                  </div>
+              <!-- 07 · ONS VERHAAL — tekst rechts -->
+              <article class="cap cap--right cap--dark" data-ch="7" data-tone="dark" id="verhaal">
+                <div class="cap__card cap__col">
+                  <p class="cap__kicker">Gemaakt vanuit ons eigen leven</p>
+                  <h2 class="cap__title">Het product dat we zelf misten.</h2>
+                  <p class="cap__body">
+                    We sporten veel, runnen onze bedrijven en proberen goed voor onszelf te
+                    zorgen. Maar op drukke dagen winnen gemak en routine het altijd van
+                    goede intenties.
+                  </p>
+                  <p class="cap__body">
+                    Daarom maken we geen ingewikkeld supplement. We maken een lekker drankje
+                    dat je graag meeneemt en waarmee je jouw creatine niet meer hoeft te
+                    vergeten.
+                  </p>
                 </div>
               </article>
 
-              <!-- 08 · FAQ -->
-              <article class="cap cap--panel cap--light" data-ch="8" data-tone="light" id="faq">
-                <div class="cap__panel cap__quotes">
-                  <header class="quotes__head">
-                    <h2 class="quotes__title">Veelgestelde vragen</h2>
-                  </header>
-                  <div class="quotes__grid quotes__grid--faq">
-                    <figure class="quote-card">
-                      <p class="quote-card__lead">Waarom zit de creatine apart?</p>
-                      <blockquote>
-                        Creatine blijft droog in de doseerdop en wordt pas vlak voor het
-                        drinken met het water gemengd.
-                      </blockquote>
-                    </figure>
-                    <figure class="quote-card">
-                      <p class="quote-card__lead">Is dit een energiedrank?</p>
-                      <blockquote>
-                        Nee. Het uitgangspunt is geen Red Bull-vervanger, maar een dagelijks
-                        drankje met elektrolyten en creatine.
-                      </blockquote>
-                    </figure>
-                    <figure class="quote-card">
-                      <p class="quote-card__lead">Waarom geen zakje?</p>
-                      <blockquote>
-                        Zakjes zijn goedkoper, maar je hebt nog steeds water, een fles en een
-                        moment om alles te mengen nodig. Dit product draait om gemak.
-                      </blockquote>
-                    </figure>
-                    <figure class="quote-card">
-                      <p class="quote-card__lead">Wanneer is het verkrijgbaar?</p>
-                      <blockquote>
-                        We ontwikkelen momenteel de eerste smaken en zoeken mensen die willen
-                        testen en eerlijke feedback willen geven.
-                      </blockquote>
-                    </figure>
-                  </div>
+              <!-- 08 · FAQ — twee vragen links, twee rechts, fles in het midden -->
+              <article class="cap cap--split cap--dark" data-ch="8" data-tone="dark" id="faq">
+                <div class="cap__col cap__col--split">
+                  <p class="cap__kicker">Veelgestelde vragen</p>
+                  <article class="faq-item">
+                    <h3 class="faq-item__q">Waarom zit de creatine apart?</h3>
+                    <p class="faq-item__a">
+                      Creatine blijft droog in de doseerdop en wordt pas vlak voor het
+                      drinken met het water gemengd.
+                    </p>
+                  </article>
+                  <article class="faq-item">
+                    <h3 class="faq-item__q">Is dit een energiedrank?</h3>
+                    <p class="faq-item__a">
+                      Nee. Het uitgangspunt is geen Red Bull-vervanger, maar een dagelijks
+                      drankje met elektrolyten en creatine.
+                    </p>
+                  </article>
+                </div>
+                <div class="cap__col cap__col--split">
+                  <article class="faq-item">
+                    <h3 class="faq-item__q">Waarom geen zakje?</h3>
+                    <p class="faq-item__a">
+                      Zakjes zijn goedkoper, maar je hebt nog steeds water, een fles en een
+                      moment om alles te mengen nodig. Dit product draait om gemak.
+                    </p>
+                  </article>
+                  <article class="faq-item">
+                    <h3 class="faq-item__q">Wanneer is het verkrijgbaar?</h3>
+                    <p class="faq-item__a">
+                      We ontwikkelen momenteel de eerste smaken en zoeken mensen die willen
+                      testen en eerlijke feedback willen geven.
+                    </p>
+                  </article>
                 </div>
               </article>
 
-              <!-- 09 · SLOT -->
-              <article class="cap cap--closer cap--dark" data-ch="9" data-tone="dark" id="tester">
-                <div class="cap__video" aria-hidden="true" style="background-image:url('./media/ch09-slot.jpg')">
-                  <video muted loop playsinline preload="metadata" poster="./media/ch09-slot.jpg">
-                    <source src="./media/ch09-slot.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <div class="cap__card closer__inner">
+              <!-- 09 · SLOT — tekst rechts, beautyshot -->
+              <article class="cap cap--right cap--dark" data-ch="9" data-tone="dark" id="tester">
+                <div class="cap__card cap__col closer__inner">
                   <p class="eyebrow eyebrow--accent">Word onderdeel van de eerste batch</p>
                   <p class="closer__line">
                     Wil jij als <em>eerste</em> proeven?
