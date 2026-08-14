@@ -3,10 +3,10 @@
   <!-- Tijdelijk merkteken. De D heeft overal dezelfde lijndikte (9),
        net als de zware grotesk op het etiket. De binnenruimte staat
        voor de doseerdop, de stip voor de afgemeten portie creatine,
-       in het accent van de Blood Orange-fles. -->
+       in het accent van het elektrolytenwater. -->
   <path
     fill="#f4f4f3"
     fill-rule="evenodd"
     d="M14 12h16a20 20 0 0 1 0 40H14zm9 9v22h7a11 11 0 0 0 0-22z" />
-  <circle cx="31.5" cy="32" r="4.6" fill="#d2643a" />
+  <circle cx="31.5" cy="32" r="4.6" fill="#7fdcc4" />
 </svg>

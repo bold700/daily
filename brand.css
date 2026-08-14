@@ -35,10 +35,12 @@
   --on-dark-soft: #d8d9d7;
   --line-dark:    rgba(244, 244, 243, 0.18);
 
-  /* accent — blood orange uit de derde fles */
-  --accent:       #d2643a;
-  --accent-deep:  #b04d28;
-  --accent-soft:  #f3c3a6;
+  /* accent — fris mintgroen, de kleur van elektrolytenwater. Licht
+     genoeg om op het donker te knallen, dus knoppen krijgen donkere
+     tekst in plaats van witte. */
+  --accent:       #7fdcc4;
+  --accent-deep:  #5cc8ad;
+  --accent-soft:  #cdf1e7;
 
   /* fonts */
   /* Typografie volgt het etiket: een zware brede grotesk voor de

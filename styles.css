@@ -348,7 +348,7 @@ body.menu-open .dock__menu-btn {
 
 .btn--primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--espresso);
   border-color: var(--accent);
 }
 .btn--primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
@@ -623,7 +623,7 @@ a.service-card::after {
   bottom: 20px;
   width: 22px;
   height: 22px;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a8453a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12h14M13 5l7 7-7 7'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237fdcc4' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12h14M13 5l7 7-7 7'/></svg>");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -2024,37 +2024,41 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
   }
   .stage--product .stage__pin { background: var(--espresso); }
 
-  /* tekst bovenaan, compacter zodat een hoofdstuk binnen één scherm past */
+  /* tekst bovenaan, ruim onder de dock zodat de kicker er nooit
+     achter wegschuift */
   .stage--product .cap {
     align-items: flex-start;
-    padding: 78px 22px 24px;
+    padding: calc(96px + env(safe-area-inset-top, 0px)) 22px 24px;
   }
   .stage--product .cap--split { justify-content: flex-start; gap: 12px; }
   .stage--product .cap__card,
   .stage--product .cap__col { max-width: 100%; gap: 10px; }
 
-  .stage--product .display { font-size: clamp(2rem, 10vw, 2.6rem); }
-  .stage--product .hero__lede { font-size: 0.95rem; }
-  .stage--product .cap__title { font-size: clamp(1.35rem, 6.4vw, 1.8rem); }
-  .stage--product .cap__body { font-size: 0.9rem; line-height: 1.5; }
+  /* zelfde schaal als de hero: koppen groot, tekst prettig leesbaar */
+  .stage--product .display { font-size: clamp(2.1rem, 10.5vw, 2.8rem); }
+  .stage--product .hero__lede { font-size: 1.02rem; line-height: 1.55; }
+  .stage--product .cap__title { font-size: clamp(1.9rem, 9vw, 2.4rem); line-height: 1.12; }
+  .stage--product .cap__body { font-size: 1rem; line-height: 1.55; }
   .stage--product .eyebrow,
-  .stage--product .cap__kicker { font-size: 0.66rem; letter-spacing: 0.16em; }
+  .stage--product .cap__kicker { font-size: 0.74rem; letter-spacing: 0.16em; }
 
-  /* kaarten compact */
-  .stage--product .cap__stack { gap: 8px; margin-top: 2px; }
-  .stage--product .stack-card { padding: 10px 12px; gap: 10px; border-radius: 10px; }
-  .stage--product .stack-card__title { font-size: 0.9rem; margin-bottom: 1px; }
-  .stage--product .stack-card__body { font-size: 0.79rem; line-height: 1.4; }
+  /* kaarten mee omhoog in schaal */
+  .stage--product .cap__stack { gap: 10px; margin-top: 6px; }
+  .stage--product .stack-card { padding: 14px 16px; gap: 12px; border-radius: 12px; }
+  .stage--product .stack-card__num { font-size: 0.95rem; min-width: 24px; }
+  .stage--product .stack-card__title { font-size: 1.02rem; margin-bottom: 2px; }
+  .stage--product .stack-card__body { font-size: 0.9rem; line-height: 1.45; }
 
-  /* FAQ: vier vragen onder elkaar, klein genoeg voor één scherm */
-  .stage--product .faq-item + .faq-item { margin-top: 10px; }
-  .stage--product .faq-item__q { font-size: 0.92rem; margin-bottom: 3px; }
-  .stage--product .faq-item__a { font-size: 0.78rem; line-height: 1.4; }
+  /* FAQ: vier vragen op één scherm, dus iets bescheidener dan de rest */
+  .stage--product .faq-item + .faq-item { margin-top: 14px; }
+  .stage--product .faq-item__q { font-size: 1.05rem; margin-bottom: 4px; }
+  .stage--product .faq-item__a { font-size: 0.88rem; line-height: 1.45; }
+  .stage--product .cap[data-ch="8"] .cap__title { font-size: 1.7rem; }
   .stage--product .cap__col--split .cap__kicker { margin-bottom: 8px; }
 
   /* slot */
-  .stage--product .closer__line { font-size: clamp(1.6rem, 8vw, 2.1rem); margin-bottom: 12px; }
-  .stage--product .closer__body { font-size: 0.88rem; margin-bottom: 18px; }
+  .stage--product .closer__line { font-size: clamp(2rem, 9.5vw, 2.6rem); margin-bottom: 14px; }
+  .stage--product .closer__body { font-size: 0.98rem; margin-bottom: 22px; }
 
   /* hoofdstukteller en voortgang laag genoeg om de tekst niet te raken */
   .stage--product .stage__count { bottom: 16px; }
