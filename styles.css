@@ -127,7 +127,7 @@ a { color: inherit; }
   display: block;
   transition: filter 0.3s var(--ease);
 }
-.dock--dark .dock__logo { filter: invert(1) brightness(1.05); }
+.dock--dark .dock__logo { filter: none; }
 .dock__nav {
   display: flex;
   gap: 30px;
@@ -1091,7 +1091,7 @@ a.service-card:focus-visible {
   height: 44px;
   align-self: flex-start;
   color: var(--on-dark);
-  filter: invert(1) brightness(1.08);
+  filter: none;
 }
 .foot__tag { max-width: 34ch; font-size: 0.96rem; line-height: 1.55; }
 .foot h3 {
@@ -1672,7 +1672,7 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
   height: 52px;
   display: block;
   flex: none;
-  filter: invert(1) brightness(1.08);
+  filter: none;
   opacity: 0;
   transform: translateY(14px) scale(0.94);
   transition:
