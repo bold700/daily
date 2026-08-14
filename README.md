@@ -65,14 +65,17 @@ als vaste referentie, allemaal 1920 x 1080.
 | `daily-ch08-detail.jpg` | FAQ |
 | `daily-ch09-cta.jpg` | Slot |
 
+Naast elk liggend beeld staat een verticale versie van 1080 x 1920 met dezelfde
+naam plus `-v`, bijvoorbeeld `daily-ch00-hero-v.jpg`. Die wordt via `<picture>`
+met `media="(max-width: 820px)"` op mobiel geladen, zodat het beeld daar het
+volledige scherm vult en de fles laag in beeld staat.
+
 Elke `.shot` is voorbereid op video: vervang de `<img>` door
 `<video autoplay muted loop playsinline poster="...">` zonder de layout aan te
-raken. Voor mobiel komen er later verticale versies van 1080 x 1920 met de fles
-iets lager in beeld.
+raken.
 
 ## Nog te doen
 
 - [ ] E-mailadres: staat nu op `hallo@daily.example`
 - [ ] Logo (`media/logo.svg` + `media/logo.png`) staat nog op de template-placeholder
-- [ ] Video's van 4 tot 6 seconden per hoofdstuk, naadloos loopend
-- [ ] Verticale 1080 x 1920 versies voor mobiel
+- [ ] Video's van 4 tot 6 seconden per hoofdstuk, naadloos loopend, liggend en staand
