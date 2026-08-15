@@ -2000,10 +2000,14 @@ body.page-detail { background: var(--paper); overflow-x: hidden; }
    media-laag hier weer het volledige scherm vullen.
    ================================================================= */
 @media (max-width: 820px) {
-  /* svh in plaats van vh: de adresbalk van mobiele browsers laat vh
-     springen tijdens het scrollen, wat de pin laat trillen */
-  .stage__track { height: calc(var(--ch-count, 6) * 100svh); }
-  .stage__pin { height: 100svh; }
+  /* dvh in plaats van vh of svh: vh is de grootste viewport en laat de
+     pin achter de balken van de browser verdwijnen, svh is de kleinste
+     en liet onderaan een strook open zodra die balken inklapten. dvh
+     volgt de werkelijke hoogte, dus de sectie loopt altijd door tot de
+     onderkant van het scherm. */
+  .stage__track { height: calc(var(--ch-count, 6) * 100dvh); }
+  .stage__pin { height: 100dvh; }
+  .stage--product .cap { min-height: 100dvh; }
 
   /* het beeld is op mobiel staand (1080 x 1920) en vult het hele scherm;
      de fles staat daar zelf al laag, met rust erboven voor de tekst */
