@@ -2,14 +2,14 @@
   "$comment": "DAILY — brandwaarden. LET OP: index.html is met de hand gevuld met de definitieve teksten. Opnieuw bakken met apply-brand.mjs overschrijft die teksten. Gebruik dit bestand als naslag voor kleuren/fonts en pas brand.css bij voorkeur direct aan.",
   "brand": {
     "name": "DAILY",
-    "tagline": "Je dagelijkse creatine. Zonder gedoe.",
-    "description": "Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard in de dop. Geen pot, schep of shaker nodig.",
+    "tagline": "Nooit meer moe. Nooit meer uitgedroogd.",
+    "description": "De fles die je elke dag meeneemt. Voor op het festival, na de sportschool en om drie uur op kantoor.",
     "url": "https://placeholder.example",
     "lang": "nl",
     "locale": "nl_NL",
     "year": 2026,
     "legal": "DAILY",
-    "footerTag": "Een verfrissend drankje met elektrolyten en 5 gram creatine, apart bewaard in de dop. Je dagelijkse creatine, zonder gedoe."
+    "footerTag": "De fles die je elke dag meeneemt. Nooit meer moe, nooit meer uitgedroogd, zonder er iets voor te hoeven doen."
   },
   "contact": {
     "email": "hallo@daily.example",
